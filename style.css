@@ -406,12 +406,12 @@ div.title h1 {
 
 @font-face {
     font-family: reglisse;
-    src: url(/Fonts/ReglisseBack-eZewm.otf);
+    src: url(Fonts/ReglisseBack-eZewm.otf);
 }
 
 @font-face {
     font-family: marvel;
-    src: url(/Fonts/MarvelRegular-Dj83.ttf);
+    src: url(Fonts/MarvelRegular-Dj83.ttf);
 }
 
 @media screen and (max-width: 1300px) {
