@@ -66,7 +66,7 @@ nav button:hover {
 }
 
 header {
-    background-image: url('Images/florian-olivo-4hbJ-eymZ1o-unsplash.jpg');
+    background-image: url('/Images/florian-olivo-4hbJ-eymZ1o-unsplash.jpg');
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -126,7 +126,7 @@ section.skill-section .row {
 
 
 .skill-section .left {
-    background-image: url('Images/florian-olivo-4hbJ-eymZ1o-unsplash.jpg');
+    background-image: url('/Images/florian-olivo-4hbJ-eymZ1o-unsplash.jpg');
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -406,12 +406,12 @@ div.title h1 {
 
 @font-face {
     font-family: reglisse;
-    src: url(../Fonts/ReglisseBack-eZewm.otf);
+    src: url(/Fonts/ReglisseBack-eZewm.otf);
 }
 
 @font-face {
     font-family: marvel;
-    src: url(../Fonts/MarvelRegular-Dj83.ttf);
+    src: url(/Fonts/MarvelRegular-Dj83.ttf);
 }
 
 @media screen and (max-width: 1300px) {
