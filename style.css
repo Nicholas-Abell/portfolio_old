@@ -131,12 +131,10 @@ section.skill-section .row {
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
     color: white;
     margin: 1rem;
     border-radius: 1rem;
+    z-index: -1;
 }
 
 .skill-container {
@@ -278,7 +276,6 @@ footer .right {
 }
 
 form div {
-    display: flex;
     width: 100%;
 }
 
@@ -431,7 +428,7 @@ div.title h1 {
     }
 
     .skill-section .skill-container h1 {
-        font-size: 1rem;
+        font-size: 1.8rem;
     }
 }
 
@@ -473,6 +470,10 @@ div.title h1 {
     section.project-section h1,
     section.project-section em {
         font-size: 5rem;
+    }
+
+    form #name {
+        margin-bottom: 1rem;
     }
 
     .flex {
