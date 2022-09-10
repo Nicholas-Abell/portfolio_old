@@ -1,569 +1,159 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    min-width: 100vw;
-}
-
-body {
-    display: table;
-    max-width: 100%;
-    background-image: linear-gradient(180deg, #1f1f1f, #000), linear-gradient(180deg, rgba(0, 0, 0, .8), rgba(0, 0, 0, .8));
-    color: white;
-    font-family: sans;
-
-}
-
-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgb(124, 124, 193);
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: solid black;
-    z-index: 9999;
-}
-
-nav div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 2rem;
-}
-
-nav img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    margin-right: 1rem;
-}
-
-nav h3 {
-    margin-left: .5rem;
-}
-
-nav ul li {
-    list-style-type: none;
-    float: left;
-}
-
-nav button {
-    cursor: pointer;
-    padding: 1rem 5rem;
-    border: none;
-    background: none;
-    color: red;
-}
-
-nav button:hover {
-    background-color: gray;
-    color: white;
-}
-
-header {
-    background-image: url('Images/florian-olivo-4hbJ-eymZ1o-unsplash.jpg');
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-    min-width: 100%;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom: black 2px solid;
-    box-shadow: rgba(119, 124, 124, 0.9);
-}
-
-header div {
-    content: '';
-    position: absolute;
-    background-color: rgba(79, 87, 87, 0.9);
-    padding: 1rem;
-    border-radius: 1rem;
-}
-
-header h1 {
-    color: white;
-    font-size: 8rem;
-    text-align: center;
-}
-
-/* About Me */
-
-main div {
-    font-size: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.about-me.left,
-.about-me.right {
-    margin: 1rem;
-    border-radius: 1rem;
-}
-
-main div.right img {
-    width: 100%;
-    height: auto;
-    padding: 1rem 0rem 1rem 1rem;
-}
-
-main .about-me {
-    background-color: rgb(56, 56, 56);
-}
-
-/* Skills */
-
-section.skill-section .row {
-    display: flex;
-    width: 99.9%;
-}
-
-
-.skill-section .left {
-    background-image: url('Images/florian-olivo-4hbJ-eymZ1o-unsplash.jpg');
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-    color: white;
-    margin: 1rem 1rem 1rem 0rem;
-    border-radius: 1rem;
-    z-index: -1;
-}
-
-.skill-container {
-    display: flex;
-    width: 100%;
-}
-
-.skill-container>* {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.skill-container>div:not(div.i) {
-    background-color: black;
-    font-size: 2rem;
-    color: white;
-}
-
-.skill-container .from-right {
-    border-radius: 1rem 0rem 0 1rem;
-}
-
-.skill-container .from-left {
-    border-radius: 0rem 1rem 1rem 0rem;
-}
-
-i {
-    border-radius: 1rem;
-    font-size: 5rem;
-    margin: 1rem;
-    padding: 1rem;
-    background-color: rgba(79, 87, 87, 0.8);
-}
-
-.skill-section .right {
-    text-align: center;
-    background-color: rgb(56, 56, 56);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 1rem;
-    margin: 1rem;
-}
-
-.skill-section .right em {
-    color: rgb(203, 59, 100);
-    font-size: 8rem;
-}
-
-.fa-html5 {
-    color: orangered;
-}
-
-.fa-css3-alt {
-    color: rgb(104, 104, 218);
-}
-
-.fa-square-js {
-    color: yellow;
-}
-
-.fa-sass {
-    color: plum;
-}
-
-.fa-bootstrap {
-    color: blueviolet;
-}
-
-/* Projects */
-
-section.project-section h1 {
-    font-family: reglisse;
-    font-size: 8rem;
-    color: rgb(113, 172, 207);
-}
-
-section.project-section em {
-    color: rgb(203, 59, 100);
-    font-size: 8rem;
-}
-
-section.project-section {
-    text-align: center;
-}
-
-div.projects {
-    background-color: rgb(56, 56, 56);
-    border-radius: 1rem;
-    margin: 1rem;
-    padding: 1rem;
-}
-
-div.projects>div {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
-    padding: 1rem;
-}
-
-.project-img {
-    width: 320px;
-    margin: 1rem;
-    height: 200px;
-    background-color: lightgray;
-    position: relative;
-    z-index: 0;
-}
-
-.project-img::after {
-    content: '';
-    opacity: 0;
-    z-index: 1;
-    position: absolute;
-    background: black;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-}
-
-.project-btn-container {
-    display: flex;
-    justify-content: center;
-    opacity: 0;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: .5rem;
-    z-index: 2;
-}
-
-.project-btn-container button {
-    padding: 1rem;
-    cursor: pointer;
-}
-
-.project-btn-container button:nth-child(odd) {
-    margin-right: 1rem;
-}
-
-.project-img:hover .project-btn-container {
-    opacity: 100%;
-}
-
-.project-img:hover::after {
-    opacity: 20%;
-}
-
-/* Footer */
-
-footer {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-footer h1 {
-    font-family: reglisse;
-    font-size: 6rem;
-    align-self: start;
-    margin-bottom: 3rem;
-}
-
-footer form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-footer input {
-    border: solid 2px #e4e4e4;
-    padding: 0rem 1em;
-    line-height: 3rem;
-    width: 100%;
-    max-height: 80px;
-}
-
-footer .left {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-footer .left,
-footer .right {
-    margin: 1.5rem;
-}
-
-form div {
-    width: 100%;
-}
-
-form div input:nth-of-type(odd) {
-    margin-right: 1rem;
-}
-
-form textarea {
-    width: 100%;
-    height: 300px;
-    resize: none;
-    margin: 1rem;
-    padding: 0rem 1em;
-}
-
-form input,
-form textarea {
-    background: none;
-    border: solid silver;
-    color: white;
-}
-
-#submit {
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-footer .right {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    width: 20%;
-}
-
-footer i {
-    color: aliceblue;
-}
-
-/* Global Classes */
-
-p {
-    padding: 1.8rem;
-    font-size: 1.8rem;
-    word-spacing: .5rem;
-    line-height: 3rem;
-}
-
-/* Helper Classes */
-.flex {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
-
-.col-80 {
-    width: 80%;
-}
-
-.col-50 {
-    width: 50%;
-}
-
-.col-20 {
-    width: 20%;
-}
-
-div.title {
-    width: 30%;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-div.title h1 {
-    font-size: 8rem;
-}
-
-.rotate-text-l {
-    transform: rotate(-90deg);
-    white-space: nowrap;
-    font-family: reglisse;
-    color: rgb(203, 59, 100);
-}
-
-.rotate-text-r {
-    transform: rotate(90deg);
-    white-space: nowrap;
-    font-family: reglisse;
-    color: rgb(206, 206, 125);
-}
-
-/* Javasript Helper Classes */
-
-.fade-in {
-    opacity: 0;
-    transition: opacity 250ms ease-in;
-}
-
-.fade-in.appear {
-    opacity: 1;
-}
-
-.from-left,
-.from-right {
-    opacity: 0;
-    transition: opacity 250ms ease-out, transform 400ms ease-out;
-}
-
-.from-left {
-    transform: translateX(-50%);
-}
-
-.from-right {
-    transform: translateX(50%);
-}
-
-.from-left.appear,
-.from-right.appear {
-    transform: translateX(0);
-    opacity: 1;
-}
-
-@font-face {
-    font-family: reglisse;
-    src: url(Fonts/ReglisseBack-eZewm.otf);
-}
-
-@font-face {
-    font-family: marvel;
-    src: url(Fonts/MarvelRegular-Dj83.ttf);
-}
-
-@media screen and (max-width: 1300px) {
-    div.title h1 {
-        font-size: 5rem;
-    }
-
-}
-
-@media screen and (max-width: 1200px) {
-    p {
-        font-size: 1.3rem;
-    }
-
-    header h1 {
-        font-size: 5rem;
-    }
-
-    .skill-section .skill-container h1 {
-        font-size: 1.8rem;
-    }
-}
-
-/* Mobile Layout */
-@media screen and (max-width: 768px) {
-
-    p {
-        font-size: 1.2rem;
-    }
-
-    header {
-        background-attachment: scroll;
-        min-height: 400px;
-    }
-
-    main div.title h1 {
-        padding: .5rem 3rem;
-        border-radius: 1rem;
-        font-size: 5rem;
-        transform: rotate(0);
-    }
-
-    main {
-        margin-top: 1rem;
-    }
-
-    main div.right img {
-        display: none;
-    }
-
-    main .about-me.left {
-        flex-direction: column;
-    }
-
-    main .about-me.left,
-    main .about-me.right {
-        margin: 0;
-    }
-
-    .skill-section {
-        margin: 1rem 0 1rem 0;
-
-    }
-
-    .skill-section .left {
-        background-attachment: scroll;
-        width: 20%;
-        margin: 1rem;
-    }
-
-    .skill-container>div:not(div.i) {
-        display: none;
-    }
-
-    .skill-section i {
-        background-color: rgb(0, 0, 0, .7);
-    }
-
-    section.project-section h1,
-    section.project-section em {
-        font-size: 5rem;
-    }
-
-    .project-img {
-        min-width: 500px;
-    }
-
-    form #name {
-        margin-bottom: 1rem;
-    }
-
-    .flex {
-        flex-direction: column;
-    }
-
-    .col-50 {
-        width: 100%;
-    }
-
-}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicholas Abell</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/df31e1c585.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- <nav>
+        <div>
+            <img src="/Images/Profile.jpg" alt="My Pic">
+            <h3>Nicholas Abell</h3>
+        </div>
+        <div class="navbar">
+            <ul>
+                <li><button>Home</button></li>
+                <li><button>About</button></li>
+                <li><button>Projects</button></li>
+                <li><button>Contact</button></li>
+            </ul>
+    </nav> -->
+    </div>
+    <header>
+        <div>
+            <h1>Hi I'm <br>Nicholas Abell</h1>
+        </div>
+    </header>
+    <main class="flex">
+        <div class="left about-me col-50">
+            <div class="title">
+                <h1 class="rotate-text-l">&lt About_Me</h1>
+            </div>
+            <p>A self taught freelance web developer looking to make a difference in your next project. I am always
+                looking for freelance work to expand my portfolio.</p>
+        </div>
+        <div class="right col-50">
+            <img src="Images/altumcode-zE007SNgcdE-unsplash.jpg" alt="My Photo">
+        </div>
+    </main>
+    <section class="skill-section">
+        <div class="row">
+            <div class="left col-50">
+                <div class="skill-container">
+                    <div class="slide-in from-left">
+                        <h1>HTML</h1>
+                    </div>
+                    <div class="i">
+                        <i class="fa-brands fa-html5"></i>
+                    </div>
+                </div>
+                <div class="skill-container">
+                    <div class="i">
+                        <i class="fa-brands fa-css3-alt"></i>
+                    </div>
+                    <div class="slide-in from-right">
+                        <h1>CSS</h1>
+                    </div>
+                </div>
+                <div class="skill-container">
+                    <div class="slide-in from-left">
+                        <h1 class="slide-in from-left">Javascript</h1>
+                    </div>
+                    <div class="i">
+                        <i class="fa-brands fa-square-js"></i>
+                    </div>
+                </div>
+                <div class="skill-container">
+                    <div class="i">
+                        <i class="fa-brands fa-bootstrap"></i>
+                    </div>
+                    <div class="slide-in from-right">
+                        <h1>Bootstrap5</h1>
+                    </div>
+                </div>
+                <div class="skill-container">
+                    <div class="slide-in from-left">
+                        <h1>Sass</h1>
+                    </div>
+                    <div class="i">
+                        <i class="fa-brands fa-sass"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="right col-50">
+                <p>I'm proficient with HTML, CSS, and Javascript Dom. I specialize in making landing pages and HTML
+                    emails.</p>
+                <div class="title">
+                    <h1 class="rotate-text-r">Skills <em>=</em></h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="project-section">
+        <h1>"Projects"<em>&gt</em></h1>
+        <div class="projects flex">
+            <div>
+                <div class="project-img">
+                    <div class="project-btn-container">
+                        <button>Live Preview</button>
+                        <button>Source Code</button>
+                    </div>
+                </div>
+                <h2>Resteraunt Landing Page</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    voluptatum delectus necessitatibus.</p>
+            </div>
+            <div>
+                <div class="project-img">
+                    <div class="project-btn-container">
+                        <button>Live Preview</button>
+                        <button>Source Code</button>
+                    </div>
+                </div>
+                <h2>Grocery List</h2>
+                <p>A page that tracks your grocery list and offers meal suggestions using an api.</p>
+            </div>
+            <div>
+                <div class="project-img">
+                    <div class="project-btn-container">
+                        <button>Live Preview</button>
+                        <button>Source Code</button>
+                    </div>
+                </div>
+                <h2>Other Third Thing</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    voluptatum delectus necessitatibus.</p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="contact-form left col-80">
+            <h1>.Contact-Me{</h1>
+            <form action="#">
+                <div class="flex">
+                    <input id="name" type="text" placeholder="name" required>
+                    <input id="email" type="email" placeholder="email" required>
+                </div>
+                <textarea name="message" placeholder="...message" id="message" cols="50" rows="10"></textarea>
+                <input type="submit" value="Submit" id="submit">
+            </form>
+            <h1>}</h1>
+        </div>
+        <div class="right col-20">
+            <a href="https://github.com/Nicholas-Abell"><i class="fa-brands fa-github"></i>
+            </a>
+            <a href="www.linkedin.com/in/nicholas-abell-348807192
+            "><i class="fa-brands fa-linkedin"></i>
+            </a>
+        </div>
+    </footer>
+</body>
+<script src="Portfolio_script.js"></script>
+
+</html>
