@@ -13,7 +13,8 @@ body {
     max-width: 100%;
     background-image: linear-gradient(180deg, #1f1f1f, #000), linear-gradient(180deg, rgba(0, 0, 0, .8), rgba(0, 0, 0, .8));
     color: white;
-    font-family: sans-serif;
+    font-family: sans;
+
 }
 
 nav {
@@ -155,6 +156,14 @@ section.skill-section .row {
     color: white;
 }
 
+.skill-container .from-right {
+    border-radius: 1rem 0rem 0 1rem;
+}
+
+.skill-container .from-left {
+    border-radius: 0rem 1rem 1rem 0rem;
+}
+
 i {
     border-radius: 1rem;
     font-size: 5rem;
@@ -216,7 +225,13 @@ section.project-section {
     text-align: center;
 }
 
-div.projects div {
+div.projects {
+    background-color: rgb(56, 56, 56);
+    border-radius: 1rem;
+    margin: 1rem;
+}
+
+div.projects>div {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -225,11 +240,53 @@ div.projects div {
     padding: 1rem;
 }
 
-.fake-img {
+.project-img {
     width: 80%;
     margin: 1rem;
     height: 200px;
     background-color: lightgray;
+    position: relative;
+    z-index: 0;
+}
+
+.project-img::after {
+    content: '';
+    opacity: 0;
+    z-index: 1;
+    position: absolute;
+    background: black;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.project-btn-container {
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: .5rem;
+    z-index: 2;
+}
+
+.project-btn-container button {
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.project-btn-container button:nth-child(odd) {
+    margin-right: 1rem;
+}
+
+.project-img:hover .project-btn-container {
+    opacity: 100%;
+}
+
+.project-img:hover::after {
+    opacity: 20%;
 }
 
 /* Footer */
@@ -441,12 +498,26 @@ div.title h1 {
 
     header {
         background-attachment: scroll;
+        min-height: 400px;
     }
 
     main div.title h1 {
         padding: .5rem 3rem;
         border-radius: 1rem;
-        font-size: 3rem;
+        font-size: 5rem;
+        transform: rotate(0);
+    }
+
+    main {
+        margin-top: 1rem;
+    }
+
+    main div.right img {
+        display: none;
+    }
+
+    main .about-me.left {
+        flex-direction: column;
     }
 
     main .about-me.left,
