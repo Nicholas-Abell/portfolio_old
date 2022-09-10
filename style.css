@@ -113,6 +113,7 @@ main div {
 main div.right img {
     width: 100%;
     height: auto;
+    padding: 1rem 0rem 1rem 1rem;
 }
 
 main .about-me {
@@ -133,7 +134,7 @@ section.skill-section .row {
     background-size: cover;
     background-attachment: fixed;
     color: white;
-    margin: 1rem;
+    margin: 1rem 1rem 1rem 0rem;
     border-radius: 1rem;
     z-index: -1;
 }
@@ -229,11 +230,11 @@ div.projects {
     background-color: rgb(56, 56, 56);
     border-radius: 1rem;
     margin: 1rem;
+    padding: 1rem;
 }
 
 div.projects>div {
     display: flex;
-    justify-content: center;
     align-items: center;
     text-align: center;
     flex-direction: column;
@@ -241,7 +242,7 @@ div.projects>div {
 }
 
 .project-img {
-    width: 80%;
+    width: 320px;
     margin: 1rem;
     height: 200px;
     background-color: lightgray;
@@ -470,7 +471,7 @@ div.title h1 {
 
 @media screen and (max-width: 1300px) {
     div.title h1 {
-        font-size: 6rem;
+        font-size: 5rem;
     }
 
 }
@@ -525,9 +526,15 @@ div.title h1 {
         margin: 0;
     }
 
+    .skill-section {
+        margin: 1rem 0 1rem 0;
+
+    }
+
     .skill-section .left {
         background-attachment: scroll;
         width: 20%;
+        margin: 1rem;
     }
 
     .skill-container>div:not(div.i) {
@@ -541,6 +548,10 @@ div.title h1 {
     section.project-section h1,
     section.project-section em {
         font-size: 5rem;
+    }
+
+    .project-img {
+        min-width: 500px;
     }
 
     form #name {
