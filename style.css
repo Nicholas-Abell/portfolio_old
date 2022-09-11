@@ -110,6 +110,11 @@ main div {
     border-radius: 1rem;
 }
 
+.about-me.left p {
+    border-left: 1px solid;
+    font-size: 2rem;
+}
+
 main div.right img {
     width: 100%;
     height: auto;
@@ -182,6 +187,12 @@ i {
     align-items: center;
     border-radius: 1rem;
     margin: 1rem;
+}
+
+.skill-section .right p {
+    border-right: solid 1px;
+    margin: 1rem;
+    font-size: 2rem;
 }
 
 .skill-section .right em {
@@ -482,7 +493,7 @@ div.title h1 {
     }
 
     header h1 {
-        font-size: 5rem;
+        font-size: 8rem;
     }
 
     .skill-section .skill-container h1 {
@@ -502,6 +513,10 @@ div.title h1 {
         min-height: 400px;
     }
 
+    header h1 {
+        font-size: 5rem;
+    }
+
     main div.title h1 {
         padding: .5rem 3rem;
         border-radius: 1rem;
@@ -513,22 +528,22 @@ div.title h1 {
         margin-top: 1rem;
     }
 
+    main .about-me.left,
+    main .about-me.right {
+        margin: 0;
+    }
+
     main div.right img {
         display: none;
     }
 
     main .about-me.left {
         flex-direction: column;
-    }
-
-    main .about-me.left,
-    main .about-me.right {
-        margin: 0;
+        border: none;
     }
 
     .skill-section {
         margin: 1rem 0 1rem 0;
-
     }
 
     .skill-section .left {
