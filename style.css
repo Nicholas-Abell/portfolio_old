@@ -262,6 +262,7 @@ div.projects>div {
     background-color: lightgray;
     position: relative;
     z-index: 0;
+    border: solid white;
 }
 
 .project::after {
