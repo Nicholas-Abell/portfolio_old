@@ -6,122 +6,125 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nicholas Abell</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/src/style.css">
     <script src="https://kit.fontawesome.com/df31e1c585.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <nav class="nav">
-        <div>
-            <img src="Images/Profile.jpg" alt="My Pic">
-            <h3>Nicholas Abell</h3>
+    <div class="sticky-header">
+        <div class="profile-head">
+            <img src="Images/Profile.jpg" alt="My Pic" class="profile-head__img">
+            <h3 class="profile-head__title">Nicholas Abell</h3>
         </div>
-        <div class="nav__navbar">
-            <ul>
-                <li><button>Home</button></li>
-                <li><button>About</button></li>
-                <li><button>Projects</button></li>
-                <li><button>Contact</button></li>
+        <nav class="navbar">
+            <ul class="navbar__list">
+                <li class="navbar__item"><button class="navbar__button">Home</button></li>
+                <li class="navbar__item"><button class="navbar__button">About</button></li>
+                <li class="navbar__item"><button class="navbar__button">Projects</button></li>
+                <li class="navbar__item"><button class="navbar__button">Contact</button></li>
             </ul>
-    </nav>
+        </nav>
+    </div>
 
     <header>
-        <div>
-            <h1>Hi I'm <br>Nicholas Abell</h1>
+        <div class="title-card">
+            <h1 class="title-card__text">Hi I'm <br>Nicholas Abell</h1>
         </div>
     </header>
 
-    <main class="main flex">
-        <div class="main__about-me col-50 flex">
-            <div class="main__about-me title">
-                <h1 class="rotate-text-l">&lt About_Me</h1>
+    <main class="about-me-section">
+        <div class="about-me">
+            <div class="about-me__title-card">
+                <h1 class="about-me__title about-me__title--rotate rotate-text-l">&lt About_Me</h1>
             </div>
-            <p>A self taught freelance web developer looking to make a difference in your next project.</p>
+            <p class="about-me__info">A self taught freelance web developer looking to make a difference in your next
+                project.</p>
         </div>
-        <div class="main__image-container right col-50">
-            <img class="main__image-container__image" src="Images/altumcode-zE007SNgcdE-unsplash.jpg" alt="My Photo">
+        <div class="aside right">
+            <div class="square"></div>
         </div>
     </main>
 
     <section class="skill-section">
-        <div class="skill-section__row">
-            <div class="skill-section__row__icon-container col-50">
-                <div class="skill-container">
-                    <div class="slide-in from-left">
-                        <h1>HTML</h1>
-                    </div>
-                    <div class="i">
-                        <i class="fa-brands fa-html5"></i>
-                    </div>
+        <div class="skills">
+            <div class="skill">
+                <div class="skill__title-card slide-in from-left">
+                    <h1 class="skill__title">HTML</h1>
                 </div>
-                <div class="skill-container">
-                    <div class="i">
-                        <i class="fa-brands fa-css3-alt"></i>
-                    </div>
-                    <div class="slide-in from-right">
-                        <h1>CSS</h1>
-                    </div>
-                </div>
-                <div class="skill-container">
-                    <div class="slide-in from-left">
-                        <h1 class="slide-in from-left">Javascript</h1>
-                    </div>
-                    <div class="i">
-                        <i class="fa-brands fa-square-js"></i>
-                    </div>
-                </div>
-                <div class="skill-container">
-                    <div class="i">
-                        <i class="fa-brands fa-bootstrap"></i>
-                    </div>
-                    <div class="slide-in from-right">
-                        <h1>Bootstrap5</h1>
-                    </div>
-                </div>
-                <div class="skill-container">
-                    <div class="slide-in from-left">
-                        <h1>Sass</h1>
-                    </div>
-                    <div class="i">
-                        <i class="fa-brands fa-sass"></i>
-                    </div>
+                <div class="skill__icon-container i">
+                    <i class="skill__icon fa-brands fa-html5"></i>
                 </div>
             </div>
-            <div class="right col-50">
-                <p>I am proficient with vanilla HTML, CSS, and Javascript as well as many frameworks. I am currently
-                    learning React. </p>
-                <div class="title">
-                    <h1 class="rotate-text-r">Skills <em>=</em></h1>
+            <div class="skill">
+                <div class="skill__icon-container i">
+                    <i class="skill__icon fa-brands fa-css3-alt"></i>
+                </div>
+                <div class="skill__title-card slide-in from-right">
+                    <h1 class="skill__title">CSS</h1>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill__title-card slide-in from-left">
+                    <h1 class="slide-in from-left">Javascript</h1>
+                </div>
+                <div class="skill__icon-container i">
+                    <i class="skill__icon fa-brands fa-square-js"></i>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill__icon-container i">
+                    <i class="skill__icon fa-brands fa-bootstrap"></i>
+                </div>
+                <div class="skill__title-card slide-in from-right">
+                    <h1 class="skill__title">Bootstrap5</h1>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill__title-card slide-in from-left">
+                    <h1 class="skill__title">Sass</h1>
+                </div>
+                <div class="skill__icon-container i">
+                    <i class="skill__icon fa-brands fa-sass"></i>
                 </div>
             </div>
         </div>
-    </section>
-    <section class="project-section">
-        <h1>"Projects"<em>&gt</em></h1>
-        <div class="projects flex">
-            <div>
-                <div class="project">
-                    <div class="project-img">
-                        <img src="Images/Restaurant_Landing_Page.png" class="project-img" alt="Restaurant_Landing_Page">
-                        <div class="project-btn-container">
-                            <button><a href="https://nicholas-abell.github.io/Restaurant_Landing_Page/">Live
-                                    Preview</a></button>
-                            <button><a href="https://github.com/Nicholas-Abell/Restaurant_Landing_Page">Source
-                                    Code</a></button>
-                        </div>
-                    </div>
-                </div>
-                <h2>Resteraunt Landing Page</h2>
-                <p>A Resteraunt landing page made with HTML, SASS, and Javascript</p>
+
+        <div class="skill-info">
+            <p class="skill-info__text">I am proficient with vanilla HTML, CSS, and Javascript as well as many
+                frameworks. I am currently
+                learning React. </p>
+            <div class="skill-info__title-card title">
+                <h1 class="skill-info__title skill-info__title--rotate rotate-text-r">Skills <em>=</em></h1>
             </div>
-            <div>
-                <div class="project">
-                    <div class="project-img">
-                        <img src="Images/Grocery_List.jpeg" class="project-img" alt="Grocer_List_Page">
-                        <div class="project-btn-container">
-                            <button><a href="">Live Preview</a></button>
-                            <button><a href="">Source Code</a></button>
-                        </div>
+        </div>
+    </section>
+
+    <section class="project-section">
+        <h1 class="project-section__title">"Projects"<em>&gt</em></h1>
+        <div class="projects">
+            <div class="project project--active">
+                <!-- <div class="project__img"> -->
+                <img src="Images/Restaurant_Landing_Page.png" class="project__img" alt="Restaurant_Landing_Page">
+                <!-- <div class="project__card">
+                    <button class="project__button">
+                        <a href="https://nicholas-abell.github.io/Restaurant_Landing_Page/">Live
+                            Preview</a>
+                    </button>
+                    <button class="project__button">
+                        <a href="https://github.com/Nicholas-Abell/Restaurant_Landing_Page">Source
+                            Code</a>
+                    </button> -->
+            </div>
+            <!-- </div> -->
+            <!-- <h2>Resteraunt Landing Page</h2>
+                <p>A Resteraunt landing page made with HTML, SASS, and Javascript</p> -->
+        </div>
+        <!-- <div class="project">
+                <div class="project-img">
+                    <img src="Images/Grocery_List.jpeg" class="project-img" alt="Grocer_List_Page">
+                    <div class="project-btn-container">
+                        <button><a href="">Live Preview</a></button>
+                        <button><a href="">Source Code</a></button>
                     </div>
                 </div>
                 <h2>Grocery List</h2>
@@ -132,35 +135,38 @@
                     <div class="project-img">
                         <div class="project-btn-container">
                             <button><a href="">Live Preview</a></button>
-                            <button><a href="https://github.com/Nicholas-Abell/Grocery_List">Source Code</a></button>
+                            <button><a href="https://github.com/Nicholas-Abell/Grocery_List">Source
+                                    Code</a></button>
                         </div>
                     </div>
                 </div>
                 <h2>Other Third Thing</h2>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                     voluptatum delectus necessitatibus.</p>
-
-            </div>
+            </div> -->
         </div>
     </section>
+
     <footer>
-        <div class="contact-form left col-80">
-            <h1>.Contact-Me{</h1>
-            <form action="#">
-                <div class="flex">
-                    <input id="name" type="text" placeholder="name" required>
-                    <input id="email" type="email" placeholder="email" required>
+        <div class="contact-section">
+            <h1 class="contact-section__title">.Contact-Me{</h1>
+            <form action="#" class="contact-form">
+                <div class="contact-form__user-info">
+                    <input id="name" type="text" placeholder="name" required class="contact-form__name">
+                    <input id="email" type="email" placeholder="email" required class="contact-form__email">
                 </div>
-                <textarea name="message" placeholder="...message" id="message" cols="50" rows="10"></textarea>
-                <input type="submit" value="Submit" id="submit">
+                <textarea name="message" placeholder="...message" id="message" cols="50" rows="10"
+                    class="contact-form__user-text"></textarea>
+                <input type="submit" value="Submit" id="submit" class="contact-form__submit-btn">
             </form>
-            <h1>}</h1>
+            <h1 class="contact-section__title">}</h1>
         </div>
-        <div class="right col-20">
-            <a href="https://github.com/Nicholas-Abell"><i class="fa-brands fa-github"></i>
+
+        <div class="contact-links">
+            <a href="https://github.com/Nicholas-Abell"><i class="contact-links__icon fa-brands fa-github"></i>
             </a>
             <a href="www.linkedin.com/in/nicholas-abell-348807192
-            "><i class="fa-brands fa-linkedin"></i>
+            "><i class="contact-links__icon fa-brands fa-linkedin"></i>
             </a>
         </div>
     </footer>
