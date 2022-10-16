@@ -1,5 +1,5 @@
 :root {
-  --primary: #4C0070;
+  --primary: #6b298a;
   --secondary: #79018C;
   --light: #de30be;
   --dark: #160040;
@@ -24,61 +24,62 @@ body {
   max-width: 100%;
   background-color: var(--dark);
   color: white;
-  font-family: sans;
+  font-family: sans-serif;
 }
 
-/* Navbar */
-.sticky-header {
+.navbar {
   position: fixed;
-  top: 0;
-  left: 0;
-  min-height: 50px;
-  width: 100%;
-  background-color: var(--light);
+  height: 50vh;
+  width: 5vw;
+  opacity: 50%;
   z-index: 100;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 9999;
-  border-bottom: black solid;
-}
-.sticky-header .profile-head {
-  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-left: 2rem;
+  transition: opacity 1s;
+  margin-top: 20vh;
 }
-.sticky-header .profile-head__img {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  margin-right: 1rem;
+.navbar:hover {
+  opacity: 100%;
 }
-.sticky-header .profile-head__title {
-  margin-left: 0.5rem;
+.navbar__line {
+  background-color: white;
+  width: 2px;
+  height: 80px;
+  margin: 0.5rem 0;
 }
-@media (max-width: 800px) {
-  .sticky-header .navbar {
-    display: none;
-  }
-}
-.sticky-header .navbar__item {
-  list-style-type: none;
-  float: left;
-  border-left: #160040 solid;
-}
-.sticky-header .navbar__button {
-  cursor: pointer;
-  height: 100%;
-  padding: 1rem 3rem;
-  border: none;
+.navbar button {
   background: none;
-  color: var(--secondary);
-  font-size: 1.2rem;
+  border: none;
 }
-.sticky-header .navbar__button:hover {
-  background-color: gray;
+.navbar__icon {
+  cursor: pointer;
+  z-index: 1;
+  color: black;
+  border-radius: 50%;
+  background-color: white;
+  padding: 0.4rem;
+  transition: ease-in-out 0.5s;
+}
+.navbar__icon:hover {
+  background-color: black;
   color: white;
+  border: solid white;
+  transform: scale(110%);
+}
+.navbar #skill-btn {
+  padding: 0.4rem 0.3rem;
+}
+.navbar__icon--active {
+  cursor: pointer;
+  z-index: 1;
+  color: white;
+  border-radius: 50%;
+  background-color: black;
+  border: solid white;
+  padding: 0.4rem;
+  transition: ease-in-out 0.5s;
 }
 
 header {
@@ -94,25 +95,25 @@ header {
   border-bottom: black 2px solid;
   box-shadow: rgba(119, 124, 124, 0.9);
 }
-header .title-card {
+header .title-card-home {
   position: absolute;
   background-color: rgba(79, 87, 87, 0.9);
-  padding: 1rem;
+  padding: 2rem;
   border-radius: 1rem;
 }
-header .title-card__text {
+header .title-card-home__text {
   color: white;
   font-size: 8rem;
   text-align: center;
 }
 @media (max-width: 900px) {
-  header .title-card__text {
+  header .title-card-home__text {
     font-size: 6rem;
   }
 }
 @media (max-width: 800px) {
-  header .title-card__text {
-    font-size: 4rem;
+  header .title-card-home__text {
+    font-size: 5rem;
   }
 }
 
@@ -134,6 +135,7 @@ header .title-card__text {
 }
 .about-me-section .about-me:hover {
   transform: scale(102%);
+  box-shadow: 3px 6px black;
   z-index: 10;
 }
 @media (max-width: 600px) {
@@ -150,6 +152,7 @@ header .title-card__text {
 }
 .about-me-section .about-me__title {
   font-size: 7rem;
+  position: relative;
 }
 .about-me-section .about-me__title--rotate {
   transform: rotate(-90deg);
@@ -171,7 +174,6 @@ header .title-card__text {
   background-size: cover;
   background-position: center;
   margin-left: 0.5rem;
-  position: relative;
 }
 .about-me-section .aside .square {
   background-color: black;
@@ -206,7 +208,6 @@ header .title-card__text {
   color: white;
   border-radius: 1rem;
   margin-right: 0.5rem;
-  z-index: -1;
 }
 .skill-section .skills .skill {
   display: flex;
@@ -239,7 +240,23 @@ header .title-card__text {
   font-size: 5rem;
   margin: 1rem;
   padding: 1rem;
-  background-color: rgba(79, 87, 87, 0.8);
+  background-color: rgba(82, 102, 106, 0.8);
+  position: relative;
+  overflow: hidden;
+}
+.skill-section .skills .skill__icon::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -300px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(202, 227, 233, 0.8);
+  transform: skewX(-30deg);
+  transition: 0.6s ease-in;
+}
+.skill-section .skills .skill__icon:hover::after {
+  left: 250px;
 }
 .skill-section .skills .skill .from-left {
   border-radius: 0rem 1rem 1rem 0rem;
@@ -258,9 +275,11 @@ header .title-card__text {
   width: 100%;
   margin-left: 0.5rem;
   transition: ease-out 1s;
+  z-index: 1;
 }
 .skill-section .skill-info:hover {
   transform: scale(102%);
+  box-shadow: 3px 6px black;
   z-index: 10;
 }
 .skill-section .skill-info__text {
@@ -307,41 +326,36 @@ header .title-card__text {
   color: blueviolet;
 }
 
-.project-section {
+.projects-section {
+  position: relative;
   text-align: center;
+  border: solid red;
 }
-.project-section__title {
+.projects-section__title {
   font-family: reglisse;
   font-size: 8rem;
   color: rgb(113, 172, 207);
 }
-.project-section__title em {
+.projects-section__title em {
   color: rgb(203, 59, 100);
   font-size: 8rem;
 }
-.project-section .projects {
+.projects-section .projects {
   background-color: var(--primary);
   border-radius: 1rem;
   margin: 1rem;
-  padding: 1rem;
+  padding: 3rem;
 }
-.project-section .projects .project {
+.projects-section .projects .project {
   position: relative;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  flex-direction: column;
-  padding: 1rem;
-  margin: 1rem;
-  border: solid red;
 }
-.project-section .projects .project:hover__card {
+.projects-section .projects .project:hover__card {
   opacity: 0%;
 }
-.project-section .projects .project:hover__img {
+.projects-section .projects .project:hover__img {
   opacity: 50%;
 }
-.project-section .projects .project__img {
+.projects-section .projects .project__img {
   width: 100%;
   height: 100%;
   border-radius: 1rem;
@@ -349,25 +363,8 @@ header .title-card__text {
   position: relative;
   z-index: 0;
   border: solid var(--dark);
-  border: solid palegreen;
 }
-.project-section .projects .project__img::after {
-  content: "";
-  border: solid palegreen;
-  z-index: 1000;
-  position: absolute;
-  background: black;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-}
-.project-section .projects .project__img:hover {
-  opacity: 50%;
-  border: solid skyblue;
-}
-.project-section .projects .project__card {
-  border: solid red;
+.projects-section .projects .project__card {
   display: flex;
   justify-content: center;
   position: absolute;
@@ -376,15 +373,51 @@ header .title-card__text {
   padding: 0.5rem;
   z-index: 100;
 }
-.project-section .projects .project__button {
+.projects-section .projects .project__button {
   padding: 1rem;
   cursor: pointer;
   opacity: 100%;
 }
-.project-section .projects .project__button a,
-.project-section .projects .project__button a:visited,
-.project-section .projects .project__button a:active {
+.projects-section .projects .project__button a,
+.projects-section .projects .project__button a:visited,
+.projects-section .projects .project__button a:active {
   text-decoration: none;
+}
+.projects-section .project-nav {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 2rem auto;
+  max-width: 500px;
+  border-radius: 1rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: gray;
+  opacity: 50%;
+}
+.projects-section .project-nav:hover {
+  opacity: 100%;
+}
+.projects-section .project-nav__btn, .projects-section .project-nav__btn--active {
+  border-radius: 50%;
+  padding: 1rem;
+  transition: transform 1s;
+  cursor: pointer;
+}
+.projects-section .project-nav__btn:hover, .projects-section .project-nav__btn--active:hover {
+  transform: scale(120%);
+}
+.projects-section .project-nav__btn--active {
+  background-color: black;
+  border: white solid;
+}
+.projects-section .project-nav__line {
+  background-color: white;
+  width: 8rem;
+  height: 1px;
 }
 
 footer {
@@ -454,6 +487,8 @@ footer .contact-links {
   padding: 5rem;
 }
 footer .contact-links__icon {
+  position: relative;
+  overflow: hidden;
   color: aliceblue;
   border-radius: 1rem;
   font-size: 5rem;
@@ -461,9 +496,19 @@ footer .contact-links__icon {
   padding: 1rem;
   background-color: rgba(79, 87, 87, 0.8);
 }
-footer .contact-links__icon:hover {
-  background-color: aliceblue;
-  color: rgba(79, 87, 87, 0.8);
+footer .contact-links__icon::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -300px;
+  width: 100%;
+  height: 100%;
+  background-color: silver;
+  transform: skewX(-30deg);
+  transition: 0.6s ease-in;
+}
+footer .contact-links__icon:hover::after {
+  left: 250px;
 }
 
 /* Javasript Helper Classes */
