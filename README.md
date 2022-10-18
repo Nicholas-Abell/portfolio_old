@@ -1,2 +1,12 @@
 # Portfolio
 My Portfolio
+
+Dark Green: #164A41
+
+Medium Green: #4D774E
+
+Light Green: #9DC88D
+
+Natural Yellow: #F1B24A
+
+White: #FFFFFF
