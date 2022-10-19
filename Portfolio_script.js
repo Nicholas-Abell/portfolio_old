@@ -62,7 +62,7 @@ window.addEventListener('scroll', function (event) {
             icons.forEach(active => active.classList.remove('navbar__icon--active'));
             profileIcon.classList.add(active);
         }
-        if (isInViewport(marker, "projects-section__title")) {
+        if (isInViewport(marker, "carousel__title")) {
             icons.forEach(active => active.classList.remove('navbar__icon--active'));
             projectIcon.classList.add(active);
         }
@@ -88,4 +88,46 @@ function scrollToElement(className) {
     document.querySelector(className).scrollIntoView({
         behavior: 'smooth',
     });
+}
+
+//Carousel
+const track = document.querySelector('.carousel__track');
+const slides = Array.from(track.children);
+const nav = document.querySelector('.carousel__nav');
+const dots = document.querySelectorAll('.carousel-nav__dot')
+const carousel = document.querySelector('.carousel');
+const carouselSlide = document.querySelector('.carousel__slide');
+let slideIndex = 0;
+let carouselTimer = setTimeout(showSlides, 3000);
+
+function showSlides() {
+
+    let i;
+    let slides = Array.from(track.children);
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.opacity = '0';
+        dots[i].classList.remove('carousel-nav__dot--active');
+    }
+
+    slideIndex++;
+
+    if (slideIndex > slides.length) { slideIndex = 1 }
+    slides[slideIndex - 1].style.opacity = '100';
+    dots[slideIndex - 1].classList.add('carousel-nav__dot--active');
+    carouselTimer = setTimeout(showSlides, 3000);
+};
+
+function slideSelect(x) {
+    slides[slideIndex] = x;
+    slides[slideIndex]; y
+}
+
+function carouselMouseOver() {
+    carousel.classList.add('test');
+    clearTimeout(carouselTimer);
+}
+
+function carouselMouseLeave() {
+    carousel.classList.remove('test');
+    carouselTimer = setTimeout(showSlides, 2000);
 }
