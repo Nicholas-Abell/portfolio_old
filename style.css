@@ -1,12 +1,12 @@
 :root {
-  --primary: #6b298a;
-  --secondary: #79018C;
-  --light: #de30be;
-  --dark: #160040;
-  --gradient: linear-gradient(45deg,
-          #FF003F,
-          #4D4DFF,
-          #99FFFF);
+  --primary: #262626;
+    --secondary: #79018C;
+    --light: #262626;
+    --dark: #dcdcdc;
+    --gradient: linear-gradient(45deg,
+            #FF003F,
+            #4D4DFF,
+            #99FFFF);
 }
 
 html,
