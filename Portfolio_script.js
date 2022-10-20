@@ -54,7 +54,7 @@ var active = "navbar__icon--active";
 
 window.addEventListener('scroll', function (event) {
     marker.forEach(marker => {
-        if (isInViewport(marker, "title-card-home")) {
+        if (window.scrollY == 0 || isInViewport(marker, "title-card-home")) {
             icons.forEach(active => active.classList.remove('navbar__icon--active'));
             headerIcon.classList.add(active);
         }
@@ -100,7 +100,7 @@ const carouselSlide = document.querySelector('.carousel__slide');
 let slideIndex = 0;
 let carouselTimer = setTimeout(showSlides, 3000);
 
-function showSlides() {
+function showSlides(n) {
 
     let i;
     let slides = Array.from(track.children);
@@ -117,9 +117,8 @@ function showSlides() {
     carouselTimer = setTimeout(showSlides, 3000);
 };
 
-function slideSelect(x) {
-    slides[slideIndex] = x;
-    slides[slideIndex]; y
+function slideSelect(n) {
+    showSlides(slideIndex = n);
 }
 
 function carouselMouseOver() {
