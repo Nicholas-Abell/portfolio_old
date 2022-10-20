@@ -39,6 +39,30 @@ $breakpoints: (
     }
 }
 
+@keyframes textDrop {
+
+    0%,
+    20% {
+        top: 0;
+    }
+
+    40% {
+        top: calc(-9.375rem)
+    }
+
+    60% {
+        top: calc(-18.75rem);
+    }
+
+    80% {
+        top: calc(-9.375rem);
+    }
+
+    100% {
+        top: 0;
+    }
+}
+
 html,
 *,
 *::before,
@@ -70,6 +94,18 @@ body {
     transition: opacity 1s;
     margin-top: 20vh;
 
+    @include breakpoint(medium) {
+        width: 8vw;
+    }
+
+    @include breakpoint(small) {
+        position: fixed;
+        flex-direction: row;
+        width: 100%;
+        height: 20vh;
+        margin-top: 0;
+    }
+
     &:hover {
         opacity: 100%;
     }
@@ -79,6 +115,11 @@ body {
         width: 2px;
         height: 80px;
         margin: .5rem 0;
+
+        @include breakpoint(small) {
+            width: 80px;
+            height: 2px;
+        }
     }
 
     button {
@@ -94,6 +135,10 @@ body {
         background-color: white;
         padding: .4rem;
         transition: ease-in-out 0.5s;
+
+        @include breakpoint(small) {
+            font-size: 2rem;
+        }
 
 
         &:hover {
@@ -121,10 +166,11 @@ body {
 }
 
 header {
-    background-image: url('Images/florian-olivo-4hbJ-eymZ1o-unsplash.jpg');
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
+    // background-image: url('/Images/florian-olivo-4hbJ-eymZ1o-unsplash.jpg');
+    // background-position: center;
+    // background-size: cover;
+    // background-attachment: fixed;
+    background-color: black;
     min-width: 100%;
     min-height: 100vh;
     display: flex;
@@ -134,22 +180,54 @@ header {
     box-shadow: rgba(119, 124, 124, 0.9);
 
     .title-card-home {
-        position: absolute;
-        background-color: rgba(79, 87, 87, 0.9);
+        left: 5%;
+        margin-bottom: 80px;
+        background-color: var(--primary);
+        color: var(--dark);
         padding: 2rem;
         border-radius: 1rem;
+        max-width: 90%;
 
         &__text {
             color: white;
-            font-size: 8rem;
-            text-align: center;
+            text-align: left;
+            font-size: 6rem;
+
+            &--s {
+                font-size: 4rem;
+            }
 
             @include breakpoint(large) {
                 font-size: 6rem;
             }
+        }
 
-            @include breakpoint(medium) {
-                font-size: 5rem
+        &__wrapper {
+            height: 150px;
+            width: 100%;
+            overflow: hidden;
+
+            @include breakpoint(large) {
+                //display: none;
+            }
+
+            .dynamic-text-list {
+                list-style: none;
+
+                &__item {
+                    position: relative;
+                    color: crimson;
+                    font-weight: 700;
+                    font-size: 6rem;
+                    text-align: left;
+                    line-height: 150px;
+                    transition: transform ease-out 1s;
+                    animation: textDrop 10s infinite;
+
+                    @include breakpoint(large) {
+                        font-size: 4rem;
+                    }
+                }
             }
         }
     }
@@ -170,7 +248,7 @@ header {
         width: 100%;
         margin-right: 0.5rem;
         min-height: 600px;
-        transition: ease-out 1s;
+        transition: transform ease-out 1s;
 
         &:hover {
             transform: scale(102%);
@@ -215,9 +293,10 @@ header {
     .aside {
         width: 100%;
         border-radius: 1rem;
-        background-image: url(Images/altumcode-zE007SNgcdE-unsplash.jpg);
-        background-size: cover;
-        background-position: center;
+        // background-image: url(/Images/altumcode-zE007SNgcdE-unsplash.jpg);
+        // background-size: cover;
+        // background-position: center;
+        background-color: var(--primary);
         margin-left: 0.5rem;
 
         .square {
@@ -245,11 +324,10 @@ header {
     padding: 1rem;
 
     .skills {
-        background-image: var(--gradient);
-        background-position: center;
-        background-size: cover;
-        transition: background-image 1s;
-        background-position: center;
+        // background-image: url(/Images/florian-olivo-4hbJ-eymZ1o-unsplash.jpg);
+        //ground-position: center;
+        // background-size: cover;
+        background-color: var(--primary);
         background-attachment: fixed;
         width: 100%;
         color: white;
@@ -315,7 +393,7 @@ header {
         border-radius: 1rem;
         width: 100%;
         margin-left: 0.5rem;
-        transition: ease-out 1s;
+        transition: transform ease-out 1s;
         z-index: 1;
 
         &:hover {
@@ -383,11 +461,13 @@ header {
 .projects-section {
     position: relative;
     text-align: center;
+    width: 100%;
 
     &__title {
         font-family: reglisse;
         font-size: 8rem;
         color: rgb(113, 172, 207);
+        background-color: var(--primary);
 
         em {
             color: rgb(203, 59, 100);
@@ -398,7 +478,6 @@ header {
     .carousel {
         background-color: var(--primary);
         border-radius: 1rem;
-        max-width: 100vw;
         margin: 1rem;
         padding: 3rem;
 
@@ -419,7 +498,7 @@ header {
             height: 100%;
             overflow: hidden;
             position: absolute;
-            transition: ease-in 1s;
+            transition: opacity ease-in 1s;
             border-radius: 1rem 1rem 1rem 1rem;
         }
 
@@ -430,7 +509,7 @@ header {
         }
 
         &__title {
-            background-color: rgb(202, 82, 182);
+            background-color: var(--dark);
             color: black;
             font-size: 2rem;
             position: absolute;
@@ -445,7 +524,7 @@ header {
         }
 
         &__info {
-            background-color: rgb(202, 82, 182);
+            background-color: var(--dark);
             color: black;
             position: absolute;
             width: 100%;
@@ -510,6 +589,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--primary);
 
     .contact-section {
         display: flex;
@@ -580,10 +660,10 @@ footer {
         width: 20%;
         height: 100%;
         padding: 5rem;
+        overflow: hidden;
 
         &__icon {
             position: relative;
-            overflow: hidden;
             color: aliceblue;
             border-radius: 1rem;
             font-size: 5rem;
@@ -628,5 +708,5 @@ footer {
 
 @font-face {
     font-family: reglisse;
-    src: url(Fonts/ReglisseBack-eZewm.otf);
+    src: url(/Fonts/ReglisseBack-eZewm.otf);
 }
