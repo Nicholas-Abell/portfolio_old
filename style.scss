@@ -3,10 +3,6 @@
     --secondary: #79018C;
     --light: #262626;
     --dark: #dcdcdc;
-    --gradient: linear-gradient(45deg,
-            #FF003F,
-            #4D4DFF,
-            #99FFFF);
 }
 
 $breakpoints: (
@@ -89,7 +85,6 @@ body {
     z-index: 100;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     transition: opacity 1s;
     margin-top: 20vh;
@@ -101,6 +96,7 @@ body {
     @include breakpoint(small) {
         position: fixed;
         flex-direction: row;
+        justify-content: center;
         width: 100%;
         height: 20vh;
         margin-top: 0;
@@ -166,18 +162,26 @@ body {
 }
 
 header {
-    // background-image: url('/Images/florian-olivo-4hbJ-eymZ1o-unsplash.jpg');
-    // background-position: center;
-    // background-size: cover;
-    // background-attachment: fixed;
+    position: relative;
     background-color: black;
     min-width: 100%;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: black 2px solid;
-    box-shadow: rgba(119, 124, 124, 0.9);
+
+    .background {
+        position: absolute;
+        width: 30%;
+        height: 100%;
+        right: 0;
+        background-color: var(--dark);
+        transition: width 1s ease-out;
+
+        // &--active {
+        //     width: 30%;
+        // }
+    }
 
     .title-card-home {
         left: 5%;
@@ -187,6 +191,8 @@ header {
         padding: 2rem;
         border-radius: 1rem;
         max-width: 90%;
+        z-index: 1;
+        border: solid var(--dark);
 
         &__text {
             color: white;
@@ -237,6 +243,7 @@ header {
     display: flex;
     padding: 1rem;
     position: relative;
+    // max-width: 100%;
 
 
     .about-me {
@@ -248,11 +255,11 @@ header {
         width: 100%;
         margin-right: 0.5rem;
         min-height: 600px;
-        transition: transform ease-out 1s;
+        transition: transform ease-out 1s, box-shadow 1s ease-in-out;
 
         &:hover {
             transform: scale(102%);
-            box-shadow: 3px 6px black;
+            box-shadow: 3px 6px gray;
             z-index: 10;
         }
 
@@ -283,21 +290,32 @@ header {
 
         &__info {
             border-left: 1px solid;
-            font-size: 2rem;
+            font-size: 3rem;
             padding: 1.8rem;
-            word-spacing: .5rem;
-            line-height: 3rem;
+            word-spacing: .3rem;
+            line-height: 6rem;
         }
     }
 
-    .aside {
+    .collage {
         width: 100%;
         border-radius: 1rem;
-        // background-image: url(/Images/altumcode-zE007SNgcdE-unsplash.jpg);
-        // background-size: cover;
-        // background-position: center;
+        padding: 3rem;
         background-color: var(--primary);
         margin-left: 0.5rem;
+
+        &__row-1 {
+            display: flex;
+            align-items: center;
+            font-size: 2rem;
+
+            img {
+                width: 150px;
+                height: auto;
+                border-radius: 1rem;
+                margin-right: 1rem;
+            }
+        }
 
         .square {
             background-color: black;
@@ -310,7 +328,7 @@ header {
             border-radius: 1rem 0 0 1rem;
         }
 
-        @include breakpoint(medium) {
+        @include breakpoint(large) {
             display: none;
         }
     }
@@ -324,15 +342,15 @@ header {
     padding: 1rem;
 
     .skills {
-        // background-image: url(/Images/florian-olivo-4hbJ-eymZ1o-unsplash.jpg);
-        //ground-position: center;
-        // background-size: cover;
         background-color: var(--primary);
-        background-attachment: fixed;
         width: 100%;
         color: white;
         border-radius: 1rem;
         margin-right: 0.5rem;
+
+        @include breakpoint(large) {
+            width: auto;
+        }
 
         .skill {
             display: flex;
@@ -393,22 +411,21 @@ header {
         border-radius: 1rem;
         width: 100%;
         margin-left: 0.5rem;
-        transition: transform ease-out 1s;
+        transition: transform ease-out 1s, box-shadow 1s ease-in-out;
         z-index: 1;
 
         &:hover {
             transform: scale(102%);
-            box-shadow: 3px 6px black;
+            box-shadow: 3px 6px gray;
             z-index: 10;
         }
 
         &__text {
             border-right: solid 1px;
             margin: 1rem;
-            font-size: 2rem;
+            font-size: 3rem;
             padding: 1.8rem;
-            word-spacing: .5rem;
-            line-height: 3rem;
+            line-height: 5rem;
         }
 
         &__title-card {
@@ -645,7 +662,7 @@ footer {
             }
 
             &__submit-btn {
-                color: white;
+                color: var(--dark);
                 font-size: 1.5rem;
                 cursor: pointer;
             }
@@ -660,16 +677,16 @@ footer {
         width: 20%;
         height: 100%;
         padding: 5rem;
-        overflow: hidden;
 
         &__icon {
             position: relative;
-            color: aliceblue;
+            color: var(--dark);
             border-radius: 1rem;
             font-size: 5rem;
             margin: 1rem;
             padding: 1rem;
             background-color: rgba(79, 87, 87, 0.8);
+            overflow: hidden;
 
             @include shine(silver);
         }
