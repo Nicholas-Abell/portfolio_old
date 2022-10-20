@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nicholas Abell</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="src/style.css">
     <script src="https://kit.fontawesome.com/df31e1c585.js" crossorigin="anonymous"></script>
 </head>
 
@@ -35,7 +35,20 @@
 
     <header>
         <div class="title-card-home marker" id="home">
-            <h1 class="title-card-home__text">Hi I'm <br>Nicholas Abell</h1>
+            <h1 class="title-card-home__text--s">
+                Hello There, I'm
+            </h1>
+            <br>
+            <h1 class="title-card-home__text">
+                Nicholas Abell
+            </h1>
+            <div class="title-card-home__wrapper">
+                <ul class="dynamic-text-list">
+                    <li class="dynamic-text-list__item">Web Developer</li>
+                    <li class="dynamic-text-list__item">Gamer</li>
+                    <li class="dynamic-text-list__item">Your Future Employee</li>
+                </ul>
+            </div>
         </div>
         <div class="arrow first-arrow"></div>
         <div class="arrow second-arrow"></div>
@@ -109,12 +122,6 @@
 
     <section class="projects-section">
         <h1 class="projects-section__title">"Projects"<em>&gt</em></h1>
-        <!-- <div class="projects">
-            <div class="project project--active">
-                <img src="Images/Restaurant_Landing_Page.png" class="project__img" alt="Restaurant_Landing_Page">
-            </div>
-        </div>  -->
-
         <div class="carousel" onmouseover="carouselMouseOver()" onmouseleave="carouselMouseLeave()">
             <ul class="carousel__track">
                 <li class="carousel__slide">
@@ -150,8 +157,8 @@
             </ul>
         </div>
 
-        <div class="carousel-nav">
-            <button class="carousel-nav__dot" onclick="slideSelect()"></button>
+        <div class="carousel-nav" onmouseover="carouselMouseOver()">
+            <button class="carousel-nav__dot" onclick="slideSelect(0)"></button>
             <div class="carousel-nav__line"></div>
             <button class="carousel-nav__dot" onclick="slideSelect(1)"></button>
             <div class="carousel-nav__line"></div>
