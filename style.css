@@ -3,6 +3,10 @@
   --secondary: #79018C;
   --light: #262626;
   --dark: #dcdcdc;
+  --gradient: linear-gradient(45deg,
+          #FF003F,
+          #4D4DFF,
+          #99FFFF);
 }
 
 @keyframes textDrop {
@@ -42,15 +46,15 @@ body {
 
 .navbar {
   position: fixed;
-  height: 50vh;
+  height: 100vh;
   width: 5vw;
   opacity: 50%;
   z-index: 100;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   transition: opacity 1s;
-  margin-top: 20vh;
 }
 @media (max-width: 800px) {
   .navbar {
@@ -124,7 +128,8 @@ header {
   position: relative;
   background-color: black;
   min-width: 100%;
-  min-height: 100vh;
+  height: 100vh;
+  min-height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -138,15 +143,15 @@ header .background {
   transition: width 1s ease-out;
 }
 header .title-card-home {
-  left: 5%;
-  margin-bottom: 80px;
   background-color: var(--primary);
   color: var(--dark);
   padding: 2rem;
   border-radius: 1rem;
   max-width: 90%;
+  max-height: 90%;
   z-index: 1;
   border: solid var(--dark);
+  overflow: hidden;
 }
 header .title-card-home__text {
   color: white;
@@ -154,11 +159,19 @@ header .title-card-home__text {
   font-size: 6rem;
 }
 header .title-card-home__text--s {
-  font-size: 4rem;
+  font-size: 3rem;
 }
 @media (max-width: 900px) {
   header .title-card-home__text {
     font-size: 6rem;
+  }
+}
+@media (max-width: 800px) {
+  header .title-card-home__text {
+    font-size: 4rem;
+  }
+  header .title-card-home__text--s {
+    font-size: 2rem;
   }
 }
 header .title-card-home__wrapper {
@@ -205,6 +218,11 @@ header .title-card-home__wrapper .dynamic-text-list__item {
   transform: scale(102%);
   box-shadow: 3px 6px gray;
   z-index: 10;
+}
+@media (max-width: 600px) {
+  .about-me-section .about-me:hover {
+    transform: none;
+  }
 }
 @media (max-width: 600px) {
   .about-me-section .about-me {
@@ -298,9 +316,9 @@ header .title-card-home__wrapper .dynamic-text-list__item {
   justify-content: center;
   align-items: center;
   background-color: var(--dark);
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: var(--light);
-  font-weight: bold;
+  font-weight: 900;
 }
 @media (max-width: 900px) {
   .skill-section .skills .skill__title-card {
@@ -359,6 +377,11 @@ header .title-card-home__wrapper .dynamic-text-list__item {
   transform: scale(102%);
   box-shadow: 3px 6px gray;
   z-index: 10;
+}
+@media (max-width: 600px) {
+  .skill-section .skill-info:hover {
+    transform: none;
+  }
 }
 .skill-section .skill-info__text {
   border-right: solid 1px;
@@ -424,7 +447,7 @@ header .title-card-home__wrapper .dynamic-text-list__item {
   margin: 1rem;
   padding: 3rem;
 }
-.projects-section .carousel:hover .carousel__slide .carousel__info, .projects-section .carousel:hover .carousel__slide .carousel__title {
+.projects-section .carousel:hover .carousel__info, .projects-section .carousel:hover .carousel__title {
   opacity: 100%;
 }
 .projects-section .carousel__track {
