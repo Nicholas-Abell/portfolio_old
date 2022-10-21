@@ -3,6 +3,10 @@
     --secondary: #79018C;
     --light: #262626;
     --dark: #dcdcdc;
+    --gradient: linear-gradient(45deg,
+            #FF003F,
+            #4D4DFF,
+            #99FFFF);
 }
 
 $breakpoints: (
@@ -79,15 +83,15 @@ body {
 
 .navbar {
     position: fixed;
-    height: 50vh;
+    height: 100vh;
     width: 5vw;
     opacity: 50%;
     z-index: 100;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     transition: opacity 1s;
-    margin-top: 20vh;
 
     @include breakpoint(medium) {
         width: 8vw;
@@ -165,7 +169,8 @@ header {
     position: relative;
     background-color: black;
     min-width: 100%;
-    min-height: 100vh;
+    height: 100vh;
+    min-height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -177,22 +182,18 @@ header {
         right: 0;
         background-color: var(--dark);
         transition: width 1s ease-out;
-
-        // &--active {
-        //     width: 30%;
-        // }
     }
 
     .title-card-home {
-        left: 5%;
-        margin-bottom: 80px;
         background-color: var(--primary);
         color: var(--dark);
         padding: 2rem;
         border-radius: 1rem;
         max-width: 90%;
+        max-height: 90%;
         z-index: 1;
         border: solid var(--dark);
+        overflow: hidden;
 
         &__text {
             color: white;
@@ -200,11 +201,19 @@ header {
             font-size: 6rem;
 
             &--s {
-                font-size: 4rem;
+                font-size: 3rem;
             }
 
             @include breakpoint(large) {
                 font-size: 6rem;
+            }
+
+            @include breakpoint(medium) {
+                font-size: 4rem;
+
+                &--s {
+                    font-size: 2rem;
+                }
             }
         }
 
@@ -261,6 +270,10 @@ header {
             transform: scale(102%);
             box-shadow: 3px 6px gray;
             z-index: 10;
+
+            @include breakpoint(small) {
+                transform: none;
+            }
         }
 
         @include breakpoint(small) {
@@ -363,9 +376,9 @@ header {
                 justify-content: center;
                 align-items: center;
                 background-color: var(--dark);
-                font-size: 2rem;
+                font-size: 2.5rem;
                 color: var(--light);
-                font-weight: bold;
+                font-weight: 900;
 
                 @include breakpoint(large) {
                     display: none;
@@ -418,6 +431,10 @@ header {
             transform: scale(102%);
             box-shadow: 3px 6px gray;
             z-index: 10;
+
+            @include breakpoint(small) {
+                transform: none;
+            }
         }
 
         &__text {
@@ -498,8 +515,8 @@ header {
         margin: 1rem;
         padding: 3rem;
 
-        &:hover .carousel__slide .carousel__info,
-        &:hover .carousel__slide .carousel__title {
+        &:hover .carousel__info,
+        &:hover .carousel__title {
             opacity: 100%;
         }
 
