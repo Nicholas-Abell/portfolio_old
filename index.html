@@ -1,201 +1,746 @@
-<!DOCTYPE html>
-<html lang="en">
+:root {
+    --primary: #262626;
+    --secondary: #79018C;
+    --light: #262626;
+    --dark: #dcdcdc;
+    --gradient: linear-gradient(45deg,
+            #FF003F,
+            #4D4DFF,
+            #99FFFF);
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nicholas Abell</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/df31e1c585.js" crossorigin="anonymous"></script>
-</head>
+$breakpoints: (
+    large: 900px,
+    medium: 800px,
+    small: 600px
+);
 
-<body>
-    <nav class="navbar">
-        <button onclick="scrollToElementCentered('.title-card-home')">
-            <i class="navbar__icon navbar__icon--active fa fa-home" id="home-btn" aria-hidden="true"></i>
-        </button>
-        <div class="navbar__line"></div>
-        <button onclick="scrollToElementCentered('.about-me__title-card')">
-            <i class="navbar__icon fa-solid fa-user" id="profile-btn"></i>
-        </button>
-        <div class="navbar__line"></div>
-        <button onclick="scrollToElementCentered('.skill-info__title-card')">
-            <i class="navbar__icon fa-solid fa-code" id="skill-btn"></i>
-        </button>
-        <div class="navbar__line"></div>
-        <button onclick="scrollToElement('.projects-section__title')">
-            <i class="navbar__icon fa-brands fa-codepen" id="projects-btn"></i>
-        </button>
-        <div class="navbar__line"></div>
-        <button onclick="scrollToElement('.contact-section__title')">
-            <i class="navbar__icon fa-solid fa-envelope" id="contact-btn"></i>
-        </button>
-    </nav>
+@mixin breakpoint($size) {
+    @media (max-width: map-get($breakpoints, $size)) {
+        @content
+    }
+}
 
-    <header>
-        <div class="background --active"></div>
-        <div class="title-card-home marker" id="home">
-            <h1 class="title-card-home__text--s">
-                Hello There, I'm
-            </h1>
-            <br>
-            <h1 class="title-card-home__text">
-                Nicholas Abell
-            </h1>
-            <div class="title-card-home__wrapper">
-                <ul class="dynamic-text-list">
-                    <li class="dynamic-text-list__item">Web Developer</li>
-                    <li class="dynamic-text-list__item">Gamer</li>
-                    <li class="dynamic-text-list__item">Your Future Employee</li>
-                </ul>
-            </div>
-        </div>
-        <div class="arrow first-arrow"></div>
-        <div class="arrow second-arrow"></div>
-    </header>
+@mixin shine($color) {
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -300px;
+        width: 100%;
+        height: 100%;
+        background-color: $color;
+        transform: skewX(-30deg);
+        transition: 0.6s ease-in;
+    }
 
-    <main class="about-me-section">
-        <div class="about-me">
-            <div class="about-me__title-card marker">
-                <h1 class="about-me__title about-me__title--rotate rotate-text-l">&lt About_Me</h1>
-            </div>
-            <p class="about-me__info">A self taught developer looking to make a difference in your
-                workplace</p>
-        </div>
-        <div class="collage">
-            <div class="collage__row-1">
-                <img src="/Images/Profile.jpg" alt="My Photo">
-                <i class="fa-solid fa-arrow-left"></i>
-                <h1>This Is Me</h1>
-            </div>
-        </div>
-    </main>
+    &:hover::after {
+        left: 250px;
+    }
+}
 
-    <section class="skill-section">
-        <div class="skills">
-            <div class="skill">
-                <div class="skill__title-card slide-in from-left">
-                    <h1 class="skill__title">HTML</h1>
-                </div>
-                <div class="skill__icon-container i">
-                    <i class="skill__icon fa-brands fa-html5"></i>
-                </div>
-            </div>
-            <div class="skill">
-                <div class="skill__icon-container i">
-                    <i class="skill__icon fa-brands fa-css3-alt"></i>
-                </div>
-                <div class="skill__title-card slide-in from-right">
-                    <h1 class="skill__title">CSS</h1>
-                </div>
-            </div>
-            <div class="skill">
-                <div class="skill__title-card slide-in from-left">
-                    <h1 class="slide-in from-left">Javascript</h1>
-                </div>
-                <div class="skill__icon-container i">
-                    <i class="skill__icon fa-brands fa-square-js"></i>
-                </div>
-            </div>
-            <div class="skill">
-                <div class="skill__icon-container i">
-                    <i class="skill__icon fa-brands fa-bootstrap"></i>
-                </div>
-                <div class="skill__title-card slide-in from-right">
-                    <h1 class="skill__title">Bootstrap5</h1>
-                </div>
-            </div>
-            <div class="skill">
-                <div class="skill__title-card slide-in from-left">
-                    <h1 class="skill__title">Sass</h1>
-                </div>
-                <div class="skill__icon-container i">
-                    <i class="skill__icon fa-brands fa-sass"></i>
-                </div>
-            </div>
-        </div>
+@keyframes textDrop {
 
-        <div class="skill-info x">
-            <p class="skill-info__text">I am proficient with vanilla HTML, CSS, and Javascript and several
-                frameworks. I am currently
-                learning React. </p>
-            <div class="skill-info__title-card marker">
-                <h1 class="skill-info__title skill-info__title--rotate rotate-text-r">Skills <em>=</em></h1>
-            </div>
-        </div>
-    </section>
+    0%,
+    20% {
+        top: 0;
+    }
 
-    <section class="projects-section">
-        <h1 class="projects-section__title">"Projects"<em>&gt</em></h1>
-        <div class="carousel" onmouseover="carouselMouseOver()" onmouseleave="carouselMouseLeave()">
-            <ul class="carousel__track">
-                <li class="carousel__slide">
-                    <img class="carousel__image" src="Images/Restaurant_Landing_Page.png" alt="">
-                    <div class="carousel__title marker">
-                        <h1>Restaurant Landing Page</h1>
-                    </div>
-                    <div class="carousel__info">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, consectetur. Esse, optio
-                            hic, recusandae accusantium voluptate sequi vel quod, quidem illo maiores</p>
-                    </div>
-                </li>
-                <li class="carousel__slide">
-                    <img class="carousel__image project__img" src="Images/Grocery_List.jpeg" alt="">
-                    <div class="carousel__title marker">
-                        <h1>Grocery List</h1>
-                    </div>
-                    <div class="carousel__info">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, consectetur. Esse, optio
-                            hic, recusandae accusantium voluptate sequi vel quod, quidem illo maiores</p>
-                    </div>
-                </li>
-                <li class="carousel__slide">
-                    <img class="carousel__image" src="Images/walkator-klMii3cR9iI-unsplash.jpg" alt="">
-                    <div class="carousel__title marker">
-                        <h1>Other Third Thing</h1>
-                    </div>
-                    <div class="carousel__info">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, consectetur. Esse, optio
-                            hic, recusandae accusantium voluptate sequi vel quod, quidem illo maiores</p>
-                    </div>
-                </li>
-            </ul>
-        </div>
+    40% {
+        top: calc(-9.375rem)
+    }
 
-        <div class="carousel-nav" onmouseover="carouselMouseOver()">
-            <button class="carousel-nav__dot" onclick="slideSelect(0)"></button>
-            <div class="carousel-nav__line"></div>
-            <button class="carousel-nav__dot" onclick="slideSelect(1)"></button>
-            <div class="carousel-nav__line"></div>
-            <button class="carousel-nav__dot" onclick="slideSelect(2)"></button>
-        </div>
-    </section>
+    60% {
+        top: calc(-18.75rem);
+    }
 
-    <footer>
-        <div class="contact-section">
-            <h1 class="contact-section__title marker">.Contact-Me{</h1>
-            <form action="#" class="contact-form">
-                <div class="contact-form__user-info">
-                    <input id="name" type="text" placeholder="name" required class="contact-form__name">
-                    <input id="email" type="email" placeholder="email" required class="contact-form__email">
-                </div>
-                <textarea name="message" placeholder="...message" id="message" cols="50" rows="10"
-                    class="contact-form__user-text"></textarea>
-                <input type="submit" value="Submit" id="submit" class="contact-form__submit-btn">
-            </form>
-            <h1 class="contact-section__title">}</h1>
-        </div>
+    80% {
+        top: calc(-9.375rem);
+    }
 
-        <div class="contact-links">
-            <a href="https://github.com/Nicholas-Abell"><i class="contact-links__icon fa-brands fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/nicholas-abell-348807192/
-            "><i class="contact-links__icon fa-brands fa-linkedin"></i>
-            </a>
-        </div>
-    </footer>
-</body>
-<script src="Portfolio_script.js"></script>
+    100% {
+        top: 0;
+    }
+}
 
-</html>
+html,
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+body {
+    display: table;
+    max-width: 100%;
+    background-color: var(--dark);
+    color: white;
+    font-family: sans-serif;
+}
+
+.navbar {
+    position: fixed;
+    height: 100vh;
+    width: 5vw;
+    opacity: 50%;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 1s;
+
+    @include breakpoint(medium) {
+        width: 8vw;
+    }
+
+    @include breakpoint(small) {
+        position: fixed;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        height: 20vh;
+        margin-top: 0;
+    }
+
+    &:hover {
+        opacity: 100%;
+    }
+
+    &__line {
+        background-color: white;
+        width: 2px;
+        height: 80px;
+        margin: .5rem 0;
+
+        @include breakpoint(small) {
+            width: 80px;
+            height: 2px;
+        }
+    }
+
+    button {
+        background: none;
+        border: none;
+    }
+
+    &__icon {
+        cursor: pointer;
+        z-index: 1;
+        color: black;
+        border-radius: 50%;
+        background-color: white;
+        padding: .4rem;
+        transition: ease-in-out 0.5s;
+
+        @include breakpoint(small) {
+            font-size: 2rem;
+        }
+
+
+        &:hover {
+            background-color: black;
+            color: white;
+            border: solid white;
+            transform: scale(110%);
+        }
+    }
+
+    #skill-btn {
+        padding: .4rem 0.3rem;
+    }
+
+    &__icon--active {
+        cursor: pointer;
+        z-index: 1;
+        color: white;
+        border-radius: 50%;
+        background-color: black;
+        border: solid white;
+        padding: .4rem;
+        transition: ease-in-out 0.5s;
+    }
+}
+
+header {
+    position: relative;
+    background-color: black;
+    min-width: 100%;
+    height: 100vh;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .background {
+        position: absolute;
+        width: 30%;
+        height: 100%;
+        right: 0;
+        background-color: var(--dark);
+        transition: width 1s ease-out;
+    }
+
+    .title-card-home {
+        background-color: var(--primary);
+        color: var(--dark);
+        padding: 2rem;
+        border-radius: 1rem;
+        max-width: 90%;
+        max-height: 90%;
+        z-index: 1;
+        border: solid var(--dark);
+        overflow: hidden;
+
+        &__text {
+            color: white;
+            text-align: left;
+            font-size: 6rem;
+
+            &--s {
+                font-size: 3rem;
+            }
+
+            @include breakpoint(large) {
+                font-size: 6rem;
+            }
+
+            @include breakpoint(medium) {
+                font-size: 4rem;
+
+                &--s {
+                    font-size: 2rem;
+                }
+            }
+        }
+
+        &__wrapper {
+            height: 150px;
+            width: 100%;
+            overflow: hidden;
+
+            @include breakpoint(large) {
+                //display: none;
+            }
+
+            .dynamic-text-list {
+                list-style: none;
+
+                &__item {
+                    position: relative;
+                    color: crimson;
+                    font-weight: 700;
+                    font-size: 6rem;
+                    text-align: left;
+                    line-height: 150px;
+                    transition: transform ease-out 1s;
+                    animation: textDrop 10s infinite;
+
+                    @include breakpoint(large) {
+                        font-size: 4rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.about-me-section {
+    display: flex;
+    padding: 1rem;
+    position: relative;
+    // max-width: 100%;
+
+
+    .about-me {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--primary);
+        border-radius: 1rem;
+        width: 100%;
+        margin-right: 0.5rem;
+        min-height: 600px;
+        transition: transform ease-out 1s, box-shadow 1s ease-in-out;
+
+        &:hover {
+            transform: scale(102%);
+            box-shadow: 3px 6px gray;
+            z-index: 10;
+
+            @include breakpoint(small) {
+                transform: none;
+            }
+        }
+
+        @include breakpoint(small) {
+            margin: 0;
+        }
+
+
+        &__title-card {
+            width: 30%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &__title {
+            font-size: 7rem;
+            position: relative;
+
+            &--rotate {
+                transform: rotate(-90deg);
+                white-space: nowrap;
+                font-family: reglisse;
+                color: rgb(203, 59, 100);
+            }
+        }
+
+        &__info {
+            border-left: 1px solid;
+            font-size: 3rem;
+            padding: 1.8rem;
+            word-spacing: .3rem;
+            line-height: 6rem;
+        }
+    }
+
+    .collage {
+        width: 100%;
+        border-radius: 1rem;
+        padding: 3rem;
+        background-color: var(--primary);
+        margin-left: 0.5rem;
+
+        &__row-1 {
+            display: flex;
+            align-items: center;
+            font-size: 2rem;
+
+            img {
+                width: 150px;
+                height: auto;
+                border-radius: 1rem;
+                margin-right: 1rem;
+            }
+        }
+
+        .square {
+            background-color: black;
+            width: 500px;
+            height: 200px;
+            border: solid red;
+            position: absolute;
+            right: 0;
+            top: 20px;
+            border-radius: 1rem 0 0 1rem;
+        }
+
+        @include breakpoint(large) {
+            display: none;
+        }
+    }
+}
+
+
+.skill-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    padding: 1rem;
+
+    .skills {
+        background-color: var(--primary);
+        width: 100%;
+        color: white;
+        border-radius: 1rem;
+        margin-right: 0.5rem;
+
+        @include breakpoint(large) {
+            width: auto;
+        }
+
+        .skill {
+            display: flex;
+            width: 100%;
+            min-height: 120px;
+
+            &__title-card {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: var(--dark);
+                font-size: 2.5rem;
+                color: var(--light);
+                font-weight: 900;
+
+                @include breakpoint(large) {
+                    display: none;
+                }
+            }
+
+            &__icon-container {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            &__icon {
+                border-radius: 1rem;
+                font-size: 5rem;
+                margin: 1rem;
+                padding: 1rem;
+                background-color: rgba(82, 102, 106, 0.8);
+                position: relative;
+                overflow: hidden;
+
+                @include shine(rgba(202, 227, 233, 0.8));
+            }
+
+            .from-left {
+                border-radius: 0rem 1rem 1rem 0rem;
+            }
+
+            .from-right {
+                border-radius: 1rem 0rem 0 1rem;
+            }
+        }
+    }
+
+    .skill-info {
+        text-align: center;
+        background-color: var(--primary);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 1rem;
+        width: 100%;
+        margin-left: 0.5rem;
+        transition: transform ease-out 1s, box-shadow 1s ease-in-out;
+        z-index: 1;
+
+        &:hover {
+            transform: scale(102%);
+            box-shadow: 3px 6px gray;
+            z-index: 10;
+
+            @include breakpoint(small) {
+                transform: none;
+            }
+        }
+
+        &__text {
+            border-right: solid 1px;
+            margin: 1rem;
+            font-size: 3rem;
+            padding: 1.8rem;
+            line-height: 5rem;
+        }
+
+        &__title-card {
+            width: 30%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &__title {
+            font-size: 7rem;
+
+            em {
+                color: rgb(203, 59, 100);
+                font-size: 8rem;
+            }
+
+            &--rotate {
+                transform: rotate(90deg);
+                white-space: nowrap;
+                font-family: reglisse;
+                color: rgb(206, 206, 125);
+            }
+        }
+    }
+
+    .fa-html5 {
+        color: orangered;
+    }
+
+    .fa-css3-alt {
+        color: rgb(104, 104, 218);
+    }
+
+    .fa-square-js {
+        color: yellow;
+    }
+
+    .fa-sass {
+        color: plum;
+    }
+
+    .fa-bootstrap {
+        color: blueviolet;
+    }
+
+}
+
+.projects-section {
+    position: relative;
+    text-align: center;
+    width: 100%;
+
+    &__title {
+        font-family: reglisse;
+        font-size: 8rem;
+        color: rgb(113, 172, 207);
+        background-color: var(--primary);
+
+        em {
+            color: rgb(203, 59, 100);
+            font-size: 8rem;
+        }
+    }
+
+    .carousel {
+        background-color: var(--primary);
+        border-radius: 1rem;
+        margin: 1rem;
+        padding: 3rem;
+
+        &:hover .carousel__info,
+        &:hover .carousel__title {
+            opacity: 100%;
+        }
+
+        &__track {
+            position: relative;
+            width: 100%;
+            height: 80vh;
+            padding: 0;
+        }
+
+        &__slide {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: absolute;
+            transition: opacity ease-in 1s;
+            border-radius: 1rem 1rem 1rem 1rem;
+        }
+
+        &__image {
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+        }
+
+        &__title {
+            background-color: var(--dark);
+            color: black;
+            font-size: 2rem;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 50%;
+            transition: opacity 1s ease-in-out;
+        }
+
+        &__info {
+            background-color: var(--dark);
+            color: black;
+            position: absolute;
+            width: 100%;
+            height: 30%;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            padding: 6rem;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+    }
+
+    .carousel-nav {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 2rem auto;
+        max-width: 500px;
+        border-radius: 1rem 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+        background-color: gray;
+        opacity: 50%;
+
+        &:hover {
+            opacity: 100%;
+        }
+
+        &__dot,
+        &__dot--active {
+            border-radius: 50%;
+            padding: 1rem;
+            transition: 1s;
+            cursor: pointer;
+
+            &:hover {
+                transform: scale(120%);
+            }
+        }
+
+        &__dot--active {
+            background-color: black;
+            border: white solid;
+        }
+
+        &__line {
+            background-color: white;
+            width: 8rem;
+            height: 1px;
+        }
+    }
+}
+
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary);
+
+    .contact-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 80%;
+
+        &__title {
+            font-family: reglisse;
+            font-size: 6rem;
+            align-self: start;
+            margin-left: 0.8rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            input {
+                padding: 0rem 1em;
+                line-height: 3rem;
+                width: 100%;
+                max-height: 80px;
+
+                background: none;
+                border: solid silver;
+                color: white;
+            }
+
+            &__user-info {
+                display: flex;
+                width: 100%;
+            }
+
+            &__name {
+                margin-right: 1rem;
+            }
+
+            &__user-text {
+                background: none;
+                border: solid silver;
+                color: white;
+
+                width: 100%;
+                height: 300px;
+                resize: none;
+                margin: 1rem;
+                padding: 0rem 1em;
+            }
+
+            &__submit-btn {
+                color: var(--dark);
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .contact-links {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 20%;
+        height: 100%;
+        padding: 5rem;
+
+        &__icon {
+            position: relative;
+            color: var(--dark);
+            border-radius: 1rem;
+            font-size: 5rem;
+            margin: 1rem;
+            padding: 1rem;
+            background-color: rgba(79, 87, 87, 0.8);
+            overflow: hidden;
+
+            @include shine(silver);
+        }
+    }
+}
+
+/* Javasript Helper Classes */
+.fade-in {
+    opacity: 0;
+    transition: opacity 250ms ease-in;
+}
+
+.fade-in.appear {
+    opacity: 1;
+}
+
+.from-left,
+.from-right {
+    opacity: 0;
+    transition: opacity 250ms ease-out, transform 400ms ease-out;
+}
+
+.from-left {
+    transform: translateX(-50%);
+}
+
+.from-right {
+    transform: translateX(50%);
+}
+
+.from-left.appear,
+.from-right.appear {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+@font-face {
+    font-family: reglisse;
+    src: url(/Fonts/ReglisseBack-eZewm.otf);
+}
