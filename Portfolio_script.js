@@ -104,6 +104,7 @@ function showSlides(n) {
 
     let i;
     let slides = Array.from(track.children);
+
     for (i = 0; i < slides.length; i++) {
         slides[i].style.opacity = '0';
         dots[i].classList.remove('carousel-nav__dot--active');
@@ -111,22 +112,20 @@ function showSlides(n) {
 
     slideIndex++;
 
-    if (slideIndex > slides.length) { slideIndex = 1 }
+    if (slideIndex > slides.length) { slideIndex = 1 };
     slides[slideIndex - 1].style.opacity = '100';
     dots[slideIndex - 1].classList.add('carousel-nav__dot--active');
-    carouselTimer = setTimeout(showSlides, 3000);
+    carouselTimer = setTimeout(showSlides, 3500);
 };
 
 function slideSelect(n) {
     showSlides(slideIndex = n);
-}
+};
 
 function carouselMouseOver() {
-    carousel.classList.add('test');
     clearTimeout(carouselTimer);
-}
+};
 
 function carouselMouseLeave() {
-    carousel.classList.remove('test');
-    carouselTimer = setTimeout(showSlides, 2000);
-}
+    carouselTimer = setTimeout(showSlides, 3500);
+};
