@@ -3,10 +3,6 @@
   --secondary: #79018C;
   --light: #262626;
   --dark: #dcdcdc;
-  --gradient: linear-gradient(45deg,
-          #FF003F,
-          #4D4DFF,
-          #99FFFF);
 }
 
 @keyframes textDrop {
@@ -151,7 +147,18 @@ header .title-card-home {
   max-height: 90%;
   z-index: 1;
   border: solid var(--dark);
+  box-shadow: 0px 3px lightgray;
   overflow: hidden;
+  transition: transform 1s, box-shadow 1s;
+}
+header .title-card-home:hover {
+  transform: scale(110%);
+  box-shadow: 0px 8px var(--dark);
+}
+@media (max-width: 800px) {
+  header .title-card-home:hover {
+    transform: none;
+  }
 }
 header .title-card-home__text {
   color: white;
@@ -200,8 +207,9 @@ header .title-card-home__wrapper .dynamic-text-list__item {
 
 .about-me-section {
   display: flex;
-  padding: 1rem;
+  padding: 2rem 1rem 1rem 1rem;
   position: relative;
+  width: 100%;
 }
 .about-me-section .about-me {
   display: flex;
@@ -209,9 +217,9 @@ header .title-card-home__wrapper .dynamic-text-list__item {
   align-items: center;
   background-color: var(--primary);
   border-radius: 1rem;
-  width: 100%;
-  margin-right: 0.5rem;
+  width: 50%;
   min-height: 600px;
+  margin-right: 0.5rem;
   transition: transform ease-out 1s, box-shadow 1s ease-in-out;
 }
 .about-me-section .about-me:hover {
@@ -219,9 +227,10 @@ header .title-card-home__wrapper .dynamic-text-list__item {
   box-shadow: 3px 6px gray;
   z-index: 10;
 }
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   .about-me-section .about-me:hover {
     transform: none;
+    box-shadow: none;
   }
 }
 @media (max-width: 600px) {
@@ -253,45 +262,60 @@ header .title-card-home__wrapper .dynamic-text-list__item {
   word-spacing: 0.3rem;
   line-height: 6rem;
 }
-.about-me-section .collage {
-  width: 100%;
+.about-me-section .resume {
+  width: 50%;
   border-radius: 1rem;
   padding: 3rem;
   background-color: var(--primary);
   margin-left: 0.5rem;
-}
-.about-me-section .collage__row-1 {
-  display: flex;
+  color: var(--dark);
+  justify-content: space-between;
   align-items: center;
+}
+.about-me-section .resume__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+.about-me-section .resume .job {
+  margin: 2rem 0rem;
   font-size: 2rem;
 }
-.about-me-section .collage__row-1 img {
-  width: 150px;
-  height: auto;
-  border-radius: 1rem;
-  margin-right: 1rem;
-}
-.about-me-section .collage .square {
-  background-color: black;
-  width: 500px;
-  height: 200px;
-  border: solid red;
-  position: absolute;
-  right: 0;
-  top: 20px;
-  border-radius: 1rem 0 0 1rem;
+.about-me-section .resume .job__head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2rem;
 }
 @media (max-width: 900px) {
-  .about-me-section .collage {
-    display: none;
+  .about-me-section .resume .job__head {
+    flex-direction: column;
   }
+}
+.about-me-section .resume .job__position {
+  margin-bottom: 1rem;
+}
+.about-me-section .resume .job__date {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.about-me-section .resume .job__company {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: red;
+}
+.about-me-section .resume .job__list {
+  font-size: 1.2rem;
+}
+.about-me-section .resume .job__list-item {
+  margin: 1rem 0;
 }
 
 .skill-section {
   display: flex;
   justify-content: space-around;
   align-items: stretch;
-  padding: 1rem;
+  padding: 1rem 1rem 2rem 1rem;
 }
 .skill-section .skills {
   background-color: var(--primary);
@@ -361,7 +385,7 @@ header .title-card-home__wrapper .dynamic-text-list__item {
   border-radius: 1rem 0rem 0 1rem;
 }
 .skill-section .skill-info {
-  text-align: center;
+  text-align: left;
   background-color: var(--primary);
   color: white;
   display: flex;
@@ -378,9 +402,10 @@ header .title-card-home__wrapper .dynamic-text-list__item {
   box-shadow: 3px 6px gray;
   z-index: 10;
 }
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   .skill-section .skill-info:hover {
     transform: none;
+    box-shadow: none;
   }
 }
 .skill-section .skill-info__text {
@@ -464,6 +489,11 @@ header .title-card-home__wrapper .dynamic-text-list__item {
   transition: opacity ease-in 1s;
   border-radius: 1rem 1rem 1rem 1rem;
 }
+@media (max-width: 800px) {
+  .projects-section .carousel__slide {
+    display: flex;
+  }
+}
 .projects-section .carousel__image {
   object-fit: cover;
   object-position: center;
@@ -472,6 +502,7 @@ header .title-card-home__wrapper .dynamic-text-list__item {
 .projects-section .carousel__title {
   background-color: var(--dark);
   color: black;
+  border: solid 2px black;
   font-size: 2rem;
   position: absolute;
   top: 0;
@@ -483,9 +514,15 @@ header .title-card-home__wrapper .dynamic-text-list__item {
   opacity: 50%;
   transition: opacity 1s ease-in-out;
 }
+@media (max-width: 800px) {
+  .projects-section .carousel__title {
+    opacity: 100%;
+  }
+}
 .projects-section .carousel__info {
   background-color: var(--dark);
   color: black;
+  border: solid 2px black;
   position: absolute;
   width: 100%;
   height: 30%;
@@ -497,6 +534,11 @@ header .title-card-home__wrapper .dynamic-text-list__item {
   padding: 6rem;
   opacity: 0;
   transition: opacity 1s ease-in-out;
+}
+@media (max-width: 800px) {
+  .projects-section .carousel__info {
+    opacity: 100%;
+  }
 }
 .projects-section .carousel-nav {
   position: absolute;
@@ -601,6 +643,7 @@ footer .contact-links {
   width: 20%;
   height: 100%;
   padding: 5rem;
+  overflow: hidden;
 }
 footer .contact-links__icon {
   position: relative;
