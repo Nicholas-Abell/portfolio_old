@@ -229,6 +229,10 @@ header {
             width: 100%;
             overflow: hidden;
 
+            @include breakpoint(large) {
+                //display: none;
+            }
+
             .dynamic-text-list {
                 list-style: none;
 
@@ -517,12 +521,13 @@ header {
 
 .projects-section {
     position: relative;
-    text-align: center;
+    text-align: left;
     width: 100%;
 
     &__title {
         font-family: reglisse;
         font-size: 8rem;
+        text-align: center;
         color: rgb(113, 172, 207);
         background-color: var(--primary);
 
@@ -543,11 +548,21 @@ header {
             opacity: 100%;
         }
 
+        @include breakpoint(medium) {
+            margin: 0;
+            padding: 1rem;
+            border-radius: 0;
+        }
+
         &__track {
             position: relative;
             width: 100%;
             height: 80vh;
             padding: 0;
+
+            @include breakpoint(medium) {
+                height: auto;
+            }
         }
 
         &__slide {
@@ -559,7 +574,21 @@ header {
             border-radius: 1rem 1rem 1rem 1rem;
 
             @include breakpoint(medium) {
+                position: relative;
                 display: flex;
+                overflow: auto;
+                border: solid 5px var(--dark);
+                opacity: 100% !important;
+                border-radius: 0 0rem 1rem 1rem;
+                transition: none;
+
+                &:nth-of-type(even) {
+                    flex-direction: row-reverse;
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: 2rem;
+                }
             }
         }
 
@@ -567,6 +596,10 @@ header {
             object-fit: cover;
             object-position: center;
             width: 100%;
+
+            @include breakpoint(medium) {
+                width: 50%;
+            }
         }
 
         &__title {
@@ -583,6 +616,7 @@ header {
             align-items: center;
             opacity: 50%;
             transition: opacity 1s ease-in-out;
+            z-index: 1;
 
             @include breakpoint(medium) {
                 opacity: 100%;
@@ -601,57 +635,111 @@ header {
             justify-content: center;
             align-items: center;
             font-size: 2rem;
-            padding: 6rem;
             opacity: 0;
             transition: opacity 1s ease-in-out;
 
             @include breakpoint(medium) {
+                position: relative;
                 opacity: 100%;
+                min-height: 500px;
+                width: 50%;
+                height: auto;
+                flex-direction: column-reverse;
+                justify-content: center;
+                padding: 1rem;
+
+                &:nth-of-type(even) {
+                    border-radius: 0 0 1rem 0;
+                }
+
+                &:nth-of-type(odd) {
+                    border-radius: 0 0 0 1rem;
+                }
+            }
+        }
+
+        &__icon-container {
+            display: flexbox;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 0 1rem;
+
+            @include breakpoint(medium) {
+                position: absolute;
+                bottom: 0;
+            }
+        }
+
+        &__icon {
+            position: relative;
+            color: var(--dark);
+            border-radius: 1rem;
+            font-size: 2rem;
+            padding: 0.8rem;
+            background-color: black;
+            overflow: hidden;
+            cursor: pointer;
+            z-index: 999;
+            border: solid black;
+
+            &:hover {
+                color: black;
+                background-color: whitesmoke;
+            }
+
+            @include breakpoint(medium) {
+                padding: 1rem;
+                font-size: 4rem;
             }
         }
     }
+}
 
-    .carousel-nav {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: 2rem auto;
-        max-width: 500px;
-        border-radius: 1rem 1rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 2rem;
-        background-color: gray;
-        opacity: 50%;
+.carousel-nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 2rem auto;
+    max-width: 500px;
+    border-radius: 1rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: gray;
+    opacity: 50%;
+
+    @include breakpoint(medium) {
+        display: none;
+    }
+
+    &:hover {
+        opacity: 100%;
+    }
+
+    &__dot,
+    &__dot--active {
+        border-radius: 50%;
+        padding: 1rem;
+        transition: 1s;
+        cursor: pointer;
 
         &:hover {
-            opacity: 100%;
+            transform: scale(120%);
         }
+    }
 
-        &__dot,
-        &__dot--active {
-            border-radius: 50%;
-            padding: 1rem;
-            transition: 1s;
-            cursor: pointer;
+    &__dot--active {
+        background-color: black;
+        border: white solid;
+    }
 
-            &:hover {
-                transform: scale(120%);
-            }
-        }
-
-        &__dot--active {
-            background-color: black;
-            border: white solid;
-        }
-
-        &__line {
-            background-color: white;
-            width: 8rem;
-            height: 1px;
-        }
+    &__line {
+        background-color: white;
+        width: 8rem;
+        height: 1px;
     }
 }
 
@@ -780,5 +868,5 @@ footer {
 
 @font-face {
     font-family: reglisse;
-    src: url(Fonts/ReglisseBack-eZewm.otf);
+    src: url(/Fonts/ReglisseBack-eZewm.otf);
 }
