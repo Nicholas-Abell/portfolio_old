@@ -101,22 +101,26 @@ let slideIndex = 0;
 let carouselTimer = setTimeout(showSlides, 3000);
 
 function showSlides(n) {
+    if (screen.width >= 800) {
 
-    let i;
-    let slides = Array.from(track.children);
+        let i;
+        let slides = Array.from(track.children);
 
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.opacity = '0';
-        dots[i].classList.remove('carousel-nav__dot--active');
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.opacity = '0';
+            dots[i].classList.remove('carousel-nav__dot--active');
+
+
+        }
+
+        slideIndex++;
+
+        if (slideIndex > slides.length) { slideIndex = 1 };
+        slides[slideIndex - 1].style.opacity = '100';
+        dots[slideIndex - 1].classList.add('carousel-nav__dot--active');
+        carouselTimer = setTimeout(showSlides, 3500);
     }
-
-    slideIndex++;
-
-    if (slideIndex > slides.length) { slideIndex = 1 };
-    slides[slideIndex - 1].style.opacity = '100';
-    dots[slideIndex - 1].classList.add('carousel-nav__dot--active');
-    carouselTimer = setTimeout(showSlides, 3500);
-};
+}
 
 function slideSelect(n) {
     showSlides(slideIndex = n);
