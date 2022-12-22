@@ -52,11 +52,6 @@ body {
   justify-content: center;
   transition: opacity 1s;
 }
-@media (max-width: 800px) {
-  .navbar {
-    width: 8vw;
-  }
-}
 @media (max-width: 600px) {
   .navbar {
     position: fixed;
@@ -453,12 +448,13 @@ header .title-card-home__wrapper .dynamic-text-list__item {
 
 .projects-section {
   position: relative;
-  text-align: center;
+  text-align: left;
   width: 100%;
 }
 .projects-section__title {
   font-family: reglisse;
   font-size: 8rem;
+  text-align: center;
   color: rgb(113, 172, 207);
   background-color: var(--primary);
 }
@@ -475,11 +471,23 @@ header .title-card-home__wrapper .dynamic-text-list__item {
 .projects-section .carousel:hover .carousel__info, .projects-section .carousel:hover .carousel__title {
   opacity: 100%;
 }
+@media (max-width: 800px) {
+  .projects-section .carousel {
+    margin: 0;
+    padding: 1rem;
+    border-radius: 0;
+  }
+}
 .projects-section .carousel__track {
   position: relative;
   width: 100%;
   height: 80vh;
   padding: 0;
+}
+@media (max-width: 800px) {
+  .projects-section .carousel__track {
+    height: auto;
+  }
 }
 .projects-section .carousel__slide {
   width: 100%;
@@ -491,13 +499,30 @@ header .title-card-home__wrapper .dynamic-text-list__item {
 }
 @media (max-width: 800px) {
   .projects-section .carousel__slide {
+    position: relative;
     display: flex;
+    overflow: auto;
+    border: solid 5px var(--dark);
+    opacity: 100% !important;
+    border-radius: 0 0rem 1rem 1rem;
+    transition: none;
+  }
+  .projects-section .carousel__slide:nth-of-type(even) {
+    flex-direction: row-reverse;
+  }
+  .projects-section .carousel__slide:not(:last-child) {
+    margin-bottom: 2rem;
   }
 }
 .projects-section .carousel__image {
   object-fit: cover;
   object-position: center;
   width: 100%;
+}
+@media (max-width: 800px) {
+  .projects-section .carousel__image {
+    width: 50%;
+  }
 }
 .projects-section .carousel__title {
   background-color: var(--dark);
@@ -513,6 +538,7 @@ header .title-card-home__wrapper .dynamic-text-list__item {
   align-items: center;
   opacity: 50%;
   transition: opacity 1s ease-in-out;
+  z-index: 1;
 }
 @media (max-width: 800px) {
   .projects-section .carousel__title {
@@ -531,16 +557,64 @@ header .title-card-home__wrapper .dynamic-text-list__item {
   justify-content: center;
   align-items: center;
   font-size: 2rem;
-  padding: 6rem;
   opacity: 0;
   transition: opacity 1s ease-in-out;
 }
 @media (max-width: 800px) {
   .projects-section .carousel__info {
+    position: relative;
     opacity: 100%;
+    min-height: 500px;
+    width: 50%;
+    height: auto;
+    flex-direction: column-reverse;
+    justify-content: center;
+    padding: 1rem;
+  }
+  .projects-section .carousel__info:nth-of-type(even) {
+    border-radius: 0 0 1rem 0;
+  }
+  .projects-section .carousel__info:nth-of-type(odd) {
+    border-radius: 0 0 0 1rem;
   }
 }
-.projects-section .carousel-nav {
+.projects-section .carousel__icon-container {
+  display: flexbox;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 1rem;
+}
+@media (max-width: 800px) {
+  .projects-section .carousel__icon-container {
+    position: absolute;
+    bottom: 0;
+  }
+}
+.projects-section .carousel__icon {
+  position: relative;
+  color: var(--dark);
+  border-radius: 1rem;
+  font-size: 2rem;
+  padding: 0.8rem;
+  background-color: black;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 999;
+  border: solid black;
+}
+.projects-section .carousel__icon:hover {
+  color: black;
+  background-color: whitesmoke;
+}
+@media (max-width: 800px) {
+  .projects-section .carousel__icon {
+    padding: 1rem;
+    font-size: 4rem;
+  }
+}
+
+.carousel-nav {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -555,23 +629,28 @@ header .title-card-home__wrapper .dynamic-text-list__item {
   background-color: gray;
   opacity: 50%;
 }
-.projects-section .carousel-nav:hover {
+@media (max-width: 800px) {
+  .carousel-nav {
+    display: none;
+  }
+}
+.carousel-nav:hover {
   opacity: 100%;
 }
-.projects-section .carousel-nav__dot, .projects-section .carousel-nav__dot--active {
+.carousel-nav__dot, .carousel-nav__dot--active {
   border-radius: 50%;
   padding: 1rem;
   transition: 1s;
   cursor: pointer;
 }
-.projects-section .carousel-nav__dot:hover, .projects-section .carousel-nav__dot--active:hover {
+.carousel-nav__dot:hover, .carousel-nav__dot--active:hover {
   transform: scale(120%);
 }
-.projects-section .carousel-nav__dot--active {
+.carousel-nav__dot--active {
   background-color: black;
   border: white solid;
 }
-.projects-section .carousel-nav__line {
+.carousel-nav__line {
   background-color: white;
   width: 8rem;
   height: 1px;
@@ -702,5 +781,5 @@ footer .contact-links__icon:hover::after {
 
 @font-face {
   font-family: reglisse;
-  src: url(Fonts/ReglisseBack-eZewm.otf);
+  src: url(/Fonts/ReglisseBack-eZewm.otf);
 }
