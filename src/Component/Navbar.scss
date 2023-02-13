@@ -1,0 +1,82 @@
+@use '../App.scss';
+@import '../App.scss';
+
+.navbar {
+    position: fixed;
+    height: 100vh;
+    width: 5vw;
+    opacity: 50%;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 1s;
+
+    @include breakpoint(small) {
+        position: fixed;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        height: 20vh;
+        margin-top: 0;
+    }
+
+    &:hover {
+        opacity: 100%;
+    }
+
+    &__line {
+        background-color: white;
+        width: 2px;
+        height: 80px;
+        margin: .5rem 0;
+
+        @include breakpoint(small) {
+            width: 80px;
+            height: 2px;
+        }
+    }
+
+    button {
+        background: none;
+        border: none;
+    }
+
+    &__icon {
+        cursor: pointer;
+        z-index: 1;
+        color: black;
+        border-radius: 50%;
+        background-color: white;
+        padding: .4rem;
+        transition: ease-in-out 0.5s;
+
+        @include breakpoint(small) {
+            font-size: 2rem;
+        }
+
+
+        &:hover {
+            background-color: black;
+            color: white;
+            border: solid white;
+            transform: scale(110%);
+        }
+    }
+
+    #skill-btn {
+        padding: .4rem 0.3rem;
+    }
+
+    &__icon--active {
+        cursor: pointer;
+        z-index: 1;
+        color: white;
+        border-radius: 50%;
+        background-color: black;
+        border: solid white;
+        padding: .4rem;
+        transition: ease-in-out 0.5s;
+    }
+}

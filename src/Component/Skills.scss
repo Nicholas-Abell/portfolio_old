@@ -1,0 +1,147 @@
+@use '../App.scss';
+@import '../App.scss';
+
+.skill-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    padding: 1rem 1rem 2rem 1rem;
+
+    .skills {
+        background-color: var(--primary);
+        width: 100%;
+        color: white;
+        border-radius: 1rem;
+        margin-right: 0.5rem;
+
+        @include breakpoint(large) {
+            width: auto;
+        }
+
+        .skill {
+            display: flex;
+            width: 100%;
+            min-height: 120px;
+
+            &__title-card {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: var(--dark);
+                font-size: 2.5rem;
+                color: var(--light);
+                font-weight: 900;
+
+                @include breakpoint(large) {
+                    display: none;
+                }
+            }
+
+            &__icon-container {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            &__icon {
+                border-radius: 1rem;
+                font-size: 5rem;
+                margin: 1rem;
+                padding: 1rem;
+                background-color: rgba(82, 102, 106, 0.8);
+                position: relative;
+                overflow: hidden;
+
+                @include shine(rgba(202, 227, 233, 0.8));
+            }
+
+            .from-left {
+                border-radius: 0rem 1rem 1rem 0rem;
+            }
+
+            .from-right {
+                border-radius: 1rem 0rem 0 1rem;
+            }
+        }
+    }
+
+    .skill-info {
+        text-align: left;
+        background-color: var(--primary);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 1rem;
+        width: 100%;
+        margin-left: 0.5rem;
+        transition: transform ease-out 1s, box-shadow 1s ease-in-out;
+        z-index: 1;
+
+        &:hover {
+            transform: scale(102%);
+            box-shadow: 3px 6px gray;
+            z-index: 10;
+
+            @include breakpoint(large) {
+                transform: none;
+                box-shadow: none;
+            }
+        }
+
+        &__text {
+            border-right: solid 1px;
+            margin: 1rem;
+            font-size: 3rem;
+            padding: 1.8rem;
+            line-height: 5rem;
+        }
+
+        &__title-card {
+            width: 30%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &__title {
+            font-size: 7rem;
+
+            em {
+                color: rgb(203, 59, 100);
+                font-size: 8rem;
+            }
+
+            &--rotate {
+                transform: rotate(90deg);
+                white-space: nowrap;
+                font-family: reglisse;
+                color: rgb(206, 206, 125);
+            }
+        }
+    }
+
+    .fa-html5 {
+        color: orangered;
+    }
+
+    .fa-css3-alt {
+        color: rgb(104, 104, 218);
+    }
+
+    .fa-square-js {
+        color: yellow;
+    }
+
+    .fa-sass {
+        color: plum;
+    }
+
+    .fa-bootstrap {
+        color: blueviolet;
+    }
+
+}

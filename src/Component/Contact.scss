@@ -1,0 +1,142 @@
+@use '../App.scss';
+@import '../App.scss';
+
+.carousel-nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 2rem auto;
+    max-width: 500px;
+    border-radius: 1rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: gray;
+    opacity: 50%;
+
+    @include breakpoint(medium) {
+        display: none;
+    }
+
+    &:hover {
+        opacity: 100%;
+    }
+
+    &__dot,
+    &__dot--active {
+        border-radius: 50%;
+        padding: 1rem;
+        transition: 1s;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(120%);
+        }
+    }
+
+    &__dot--active {
+        background-color: black;
+        border: white solid;
+    }
+
+    &__line {
+        background-color: white;
+        width: 8rem;
+        height: 1px;
+    }
+}
+
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary);
+
+    .contact-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 80%;
+
+        &__title {
+            font-family: reglisse;
+            font-size: 6rem;
+            align-self: start;
+            margin-left: 0.8rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            input {
+                padding: 0rem 1em;
+                line-height: 3rem;
+                width: 100%;
+                max-height: 80px;
+
+                background: none;
+                border: solid silver;
+                color: white;
+            }
+
+            &__user-info {
+                display: flex;
+                width: 100%;
+            }
+
+            &__name {
+                margin-right: 1rem;
+            }
+
+            &__user-text {
+                background: none;
+                border: solid silver;
+                color: white;
+
+                width: 100%;
+                height: 300px;
+                resize: none;
+                margin: 1rem;
+                padding: 0rem 1em;
+            }
+
+            &__submit-btn {
+                color: var(--dark);
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .contact-links {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 20%;
+        height: 100%;
+        padding: 5rem;
+        overflow: hidden;
+
+        &__icon {
+            position: relative;
+            color: var(--dark);
+            border-radius: 1rem;
+            font-size: 5rem;
+            margin: 1rem;
+            padding: 1rem;
+            background-color: rgba(79, 87, 87, 0.8);
+            overflow: hidden;
+
+            @include shine(silver);
+        }
+    }
+}

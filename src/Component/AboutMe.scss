@@ -1,0 +1,121 @@
+@use '../App.scss';
+@import '../App.scss';
+
+.about-me-section {
+    display: flex;
+    padding: 2rem 1rem 1rem 1rem;
+    position: relative;
+    width: 100%;
+
+    .about-me {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--primary);
+        border-radius: 1rem;
+        width: 50%;
+        min-height: 600px;
+        margin-right: 0.5rem;
+        transition: transform ease-out 1s, box-shadow 1s ease-in-out;
+
+        &:hover {
+            transform: scale(102%);
+            box-shadow: 3px 6px gray;
+            z-index: 10;
+
+            @include breakpoint(large) {
+                transform: none;
+                box-shadow: none;
+            }
+        }
+
+        @include breakpoint(small) {
+            margin: 0;
+        }
+
+
+        &__title-card {
+            width: 30%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &__title {
+            font-size: 7rem;
+            position: relative;
+
+            &--rotate {
+                transform: rotate(-90deg);
+                white-space: nowrap;
+                font-family: reglisse;
+                color: rgb(203, 59, 100);
+            }
+        }
+
+        &__info {
+            border-left: 1px solid;
+            font-size: 3rem;
+            padding: 1.8rem;
+            word-spacing: .3rem;
+            line-height: 6rem;
+        }
+    }
+
+    .resume {
+        width: 50%;
+        border-radius: 1rem;
+        padding: 3rem;
+        background-color: var(--primary);
+        margin-left: 0.5rem;
+        color: var(--dark);
+        justify-content: space-between;
+        align-items: center;
+
+        &__info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: stretch;
+        }
+
+        .job {
+            margin: 2rem 0rem;
+            font-size: 2rem;
+
+            &__head {
+                display: flex;
+                justify-content: space-between;
+                font-size: 2rem;
+
+                @include breakpoint(large) {
+                    flex-direction: column;
+                }
+            }
+
+            &__position {
+                margin-bottom: 1rem;
+            }
+
+            &__date {
+                font-size: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            &__company {
+                font-size: 1.4rem;
+                margin-bottom: 1rem;
+                color: red;
+            }
+
+            &__list {
+                font-size: 1.2rem;
+
+                &-item {
+                    margin: 1rem 0;
+                }
+            }
+        }
+    }
+}
