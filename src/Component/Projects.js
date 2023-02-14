@@ -2,50 +2,6 @@ import './Projects.scss';
 import Project from './Project';
 
 const Projects = () => {
-
-    // const track = document.querySelector('.carousel__track');
-    // const slides = Array.from(track.children);
-    // const nav = document.querySelector('.carousel__nav');
-    // const dots = document.querySelectorAll('.carousel-nav__dot')
-    // const carousel = document.querySelector('.carousel');
-    // const carouselSlide = document.querySelector('.carousel__slide');
-    // let slideIndex = 0;
-    // let carouselTimer = setTimeout(showSlides, 3000);
-
-    // function showSlides(n) {
-    //     if (screen.width >= 800) {
-
-    //         let i;
-    //         let slides = Array.from(track.children);
-
-    //         for (i = 0; i < slides.length; i++) {
-    //             slides[i].style.opacity = '0';
-    //             dots[i].classNameList.remove('carousel-nav__dot--active');
-
-
-    //         }
-
-    //         slideIndex++;
-
-    //         if (slideIndex > slides.length) { slideIndex = 1 };
-    //         slides[slideIndex - 1].style.opacity = '100';
-    //         dots[slideIndex - 1].classNameList.add('carousel-nav__dot--active');
-    //         carouselTimer = setTimeout(showSlides, 3500);
-    //     }
-    // }
-
-    // function slideSelect(n) {
-    //     showSlides(slideIndex = n);
-    // };
-
-    // function carouselMouseOver() {
-    //     clearTimeout(carouselTimer);
-    // };
-
-    // function carouselMouseLeave() {
-    //     carouselTimer = setTimeout(showSlides, 3500);
-    // };
-
     return (
         <section className="projects-section">
             <h1 className="projects-section__title">"Projects"<em>{'/>'}</em></h1>

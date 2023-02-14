@@ -1,9 +1,10 @@
+import { InView } from 'react-intersection-observer';
 import './AboutMe.scss';
 
-const AboutMe = () => {
+const AboutMe = ({ observer }) => {
     return (
-        <main className="about-me-section">
-            <div className="about-me">
+        <main className="about-me-section" ref={observer}>
+            <div className={InView ? "about-me" : 'nope'}>
                 <div className="about-me__title-card marker">
                     <h1 className="about-me__title about-me__title--rotate rotate-text-l">{'<'} About_Me</h1>
                     <hr />

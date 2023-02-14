@@ -1,4 +1,6 @@
 import './Contact.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 const Contact = () => {
     return (
@@ -21,10 +23,11 @@ const Contact = () => {
             </div>
 
             <div className="contact-links">
-                <a href="https://github.com/Nicholas-Abell"><i className="contact-links__icon fa-brands fa-github"></i>
+                <a href="https://github.com/Nicholas-Abell">
+                    <FontAwesomeIcon icon={faGithub} className="contact-links__icon" />
                 </a>
-                <a href="https://www.linkedin.com/in/nicholas-abell-348807192/
-            "><i className="contact-links__icon fa-brands fa-linkedin"></i>
+                <a href="https://www.linkedin.com/in/nicholas-abell-348807192/">
+                    <FontAwesomeIcon icon={faLinkedin} className="contact-links__icon" />
                 </a>
             </div>
         </footer>

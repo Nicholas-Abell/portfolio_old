@@ -6,10 +6,10 @@ const Skills = () => {
     return (
         <section className="skill-section">
             <div className="skills">
-                <Skill icon={faReact} skillName='React' />
-                <Skill icon={faSass} skillName='SCSS' />
-                <Skill icon={faCss3} skillName='CSS3' />
-                <Skill icon={faHtml5} skillName='HTML5' />
+                <Skill icon={faReact} skillName='React' slideInFromLeft={true} />
+                <Skill icon={faSass} skillName='SCSS' slideInFromLeft={false} />
+                <Skill icon={faCss3} skillName='CSS3' slideInFromLeft={true} />
+                <Skill icon={faHtml5} skillName='HTML5' slideInFromLeft={false} />
             </div >
 
             <div className="skill-info x">
