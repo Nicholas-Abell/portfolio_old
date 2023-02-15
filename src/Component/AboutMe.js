@@ -1,10 +1,13 @@
-import { InView } from 'react-intersection-observer';
+import { useContext } from 'react';
+import { AppContext } from '../App';
 import './AboutMe.scss';
 
-const AboutMe = ({ observer }) => {
+const AboutMe = () => {
+    const { ref, inView } = useContext(AppContext)
     return (
-        <main className="about-me-section" ref={observer}>
-            <div className={InView ? "about-me" : 'nope'}>
+        <main className="about-me-section">
+            <p>{inView ? 'in view' : 'off screen'}</p>
+            <div className="about-me">
                 <div className="about-me__title-card marker">
                     <h1 className="about-me__title about-me__title--rotate rotate-text-l">{'<'} About_Me</h1>
                     <hr />
@@ -29,7 +32,7 @@ const AboutMe = ({ observer }) => {
                                 Javascript</li>
                         </ul>
                     </div>
-                    <div className="job">
+                    <div className="job" ref={ref}>
                         <div className="job__head">
                             <h1 className="job__position">Web Developer</h1>
                             <h1 className="job__date">2021-PRESENT</h1>

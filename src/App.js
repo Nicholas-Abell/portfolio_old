@@ -1,5 +1,6 @@
-import { useRef, useEffect, useState, createContext } from 'react';
+import { useState, createContext } from 'react';
 import { useInView } from 'react-intersection-observer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './App.scss';
 import Navbar from './Component/Navbar';
 import Header from './Component/Header';
@@ -8,23 +9,29 @@ import Skills from './Component/Skills';
 import Projects from './Component/Projects';
 import Contact from './Component/Contact';
 
-function App() {
+export const AppContext = createContext(null);
 
+function App() {
+  const [activeNode, setActiveNode] = useState('Hello');
   const { ref, inView, entry } = useInView();
-  
-  // const AppContext = createContext();
-  const [activeNode, setActiveNode] = useState();
-  let x = 5;
+  const [navView, setNavView] = useState({
+    header: true,
+    aboutMe: false,
+    skills: false,
+    projects: false,
+    contacts: false
+  })
 
   return (
     <div>
-      <Navbar />
-      <Header />
-      <h1 ref={ref}>{!inView ? 'Not In View' : 'In View'}</h1>
-      <AboutMe observer={ref} />
-      <Skills />
-      <Projects />
-      <Contact />
+      <AppContext.Provider value={{ activeNode, setActiveNode, ref, inView, entry, FontAwesomeIcon, navView, setNavView }}>
+        <Navbar />
+        <Header />
+        <AboutMe />
+        <Skills />
+        <Projects />
+        <Contact />
+      </AppContext.Provider>
     </div>
   );
 }

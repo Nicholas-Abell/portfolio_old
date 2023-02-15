@@ -1,8 +1,10 @@
 import './Contact.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { useContext } from 'react';
+import { AppContext } from '../App';
 
 const Contact = () => {
+    const {FontAwesomeIcon} = useContext(AppContext);
     return (
         <footer>
             <div className="contact-section">

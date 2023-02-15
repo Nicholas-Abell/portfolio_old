@@ -1,6 +1,9 @@
 import './Header.scss';
+import { useContext } from 'react';
+import { AppContext } from '../App';
 
 const Header = () => {
+    const { ref, inView } = useContext(AppContext);
     return (
         <header>
             <div className="background --active"></div>
@@ -10,7 +13,6 @@ const Header = () => {
                 </h1>
                 <br />
                 <h1 className="title-card-home__text">
-                    Nicholas Abell
                 </h1>
                 <div className="title-card-home__wrapper">
                     <ul className="dynamic-text-list">

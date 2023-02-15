@@ -1,16 +1,14 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { AppContext } from '../App';
+import { useContext } from 'react';
 
-const NavbarNode = ({ icon }) => {
-
+const NavbarNode = ({ className, icon }) => {
+    const { FontAwesomeIcon, navView } = useContext(AppContext);
     let sectionInView = false;
     return (
         <button>
             <FontAwesomeIcon
                 icon={icon}
-                className={
-                    !sectionInView
-                        ? 'navbar__icon'
-                        : 'navbar__icon--active'} />
+                className={className} />
             {/* <i className="navbar__icon navbar__icon--active fa fa-home" id="home-btn" aria-hidden="true"></i> */}
         </button>
     )
