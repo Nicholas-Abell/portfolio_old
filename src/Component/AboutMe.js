@@ -2,13 +2,12 @@ import { useContext } from 'react';
 import { AppContext } from '../App';
 import './AboutMe.scss';
 
-const AboutMe = () => {
+const AboutMe = ({aboutMeRef}) => {
     const { ref, inView } = useContext(AppContext)
     return (
         <main className="about-me-section">
-            <p>{inView ? 'in view' : 'off screen'}</p>
             <div className="about-me">
-                <div className="about-me__title-card marker">
+                <div className="about-me__title-card marker" inView>
                     <h1 className="about-me__title about-me__title--rotate rotate-text-l">{'<'} About_Me</h1>
                     <hr />
                 </div>
@@ -17,7 +16,7 @@ const AboutMe = () => {
             </div>
             <div className="resume">
                 <div className="resume__info">
-                    <h1 className="resume__title">Work Experience</h1>
+                    <h1 className="resume__title" ref={aboutMeRef}>Work Experience</h1>
                     <hr />
                     <div className="job">
                         <div className="job__head">
@@ -32,7 +31,7 @@ const AboutMe = () => {
                                 Javascript</li>
                         </ul>
                     </div>
-                    <div className="job" ref={ref}>
+                    <div className="job">
                         <div className="job__head">
                             <h1 className="job__position">Web Developer</h1>
                             <h1 className="job__date">2021-PRESENT</h1>

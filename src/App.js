@@ -13,21 +13,16 @@ export const AppContext = createContext(null);
 
 function App() {
   const [activeNode, setActiveNode] = useState('Hello');
-  const { ref, inView, entry } = useInView();
-  const [navView, setNavView] = useState({
-    header: true,
-    aboutMe: false,
-    skills: false,
-    projects: false,
-    contacts: false
-  })
+  const { ref: headerRef, inView: headerInView } = useInView();
+  const { ref: aboutMeRef, inView: aboutMeInView } = useInView();
+
 
   return (
     <div>
-      <AppContext.Provider value={{ activeNode, setActiveNode, ref, inView, entry, FontAwesomeIcon, navView, setNavView }}>
-        <Navbar />
-        <Header />
-        <AboutMe />
+      <AppContext.Provider value={{ activeNode, setActiveNode, FontAwesomeIcon, }}>
+        <Navbar headerInView={headerInView} aboutMeInView={aboutMeInView} />
+        <Header headerref={headerRef} />
+        <AboutMe aboutMeRef={aboutMeRef} />
         <Skills />
         <Projects />
         <Contact />

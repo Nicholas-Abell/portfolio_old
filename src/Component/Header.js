@@ -2,17 +2,18 @@ import './Header.scss';
 import { useContext } from 'react';
 import { AppContext } from '../App';
 
-const Header = () => {
-    const { ref, inView } = useContext(AppContext);
+const Header = ({ headerref }) => {
+    const { ref, inView, navView, setNavView } = useContext(AppContext);
     return (
         <header>
             <div className="background --active"></div>
-            <div className="title-card-home marker" id="home">
+            <div className="title-card-home marker" id="home" >
                 <h1 className="title-card-home__text--s">
                     Hello There, I'm
                 </h1>
                 <br />
-                <h1 className="title-card-home__text">
+                <h1 className="title-card-home__text" ref={headerref}>
+                    Nicholas Abell
                 </h1>
                 <div className="title-card-home__wrapper">
                     <ul className="dynamic-text-list">
@@ -24,7 +25,7 @@ const Header = () => {
             </div>
             <div className="arrow first-arrow"></div>
             <div className="arrow second-arrow"></div>
-        </header>
+        </header >
     )
 }
 
