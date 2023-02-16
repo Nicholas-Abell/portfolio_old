@@ -19,7 +19,7 @@ const Skills = ({ skillsRef }) => {
                     learning React.
                 </p>
                 <div className="skill-info__title-card marker">
-                    <h1 ref={skillsRef} className="skill-info__title skill-info__title--rotate rotate-text-r">Skills <em>=</em></h1>
+                    <h1 ref={skillsRef} name='skillsScroll' className="skill-info__title skill-info__title--rotate rotate-text-r">Skills <em>=</em></h1>
                 </div>
             </div>
         </section >

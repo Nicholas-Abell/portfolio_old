@@ -8,7 +8,6 @@ import AboutMe from './Component/AboutMe';
 import Skills from './Component/Skills';
 import Projects from './Component/Projects';
 import Contact from './Component/Contact';
-
 export const AppContext = createContext(null);
 
 function App() {
