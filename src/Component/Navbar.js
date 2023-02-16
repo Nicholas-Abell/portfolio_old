@@ -10,8 +10,7 @@ const Navbar = ({ headerInView, aboutMeInView, projectsInView, contactInView, sk
 
     const scrollToElement = (target) => {
         scroller.scrollTo(target, {
-            duration: 200,
-            delay: 100,
+            duration: 800,
             smooth: true,
             // behavior: 'smooth',
             // block: 'center',

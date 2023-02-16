@@ -3,8 +3,8 @@ import Project from './Project';
 
 const Projects = ({ projectsRef }) => {
     return (
-        <section className="projects-section">
-            <h1 ref={projectsRef} name='projectsScroll' className="projects-section__title">"Projects"<em>{'/>'}</em></h1>
+        <section className="projects-section" name='projectsScroll'>
+            <h1 ref={projectsRef} className="projects-section__title">"Projects"<em>{'/>'}</em></h1>
             <Project />
             {/* <h1 className="projects-section__title">"Projects"<em>{'/>'}</em></h1>
             <div className="carousel" onmouseover="carouselMouseOver()" onmouseleave="carouselMouseLeave()">

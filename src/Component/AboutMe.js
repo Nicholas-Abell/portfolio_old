@@ -3,9 +3,9 @@ import Resume from './Resume';
 
 const AboutMe = ({ aboutMeRef }) => {
     return (
-        <main className="about-me-section">
+        <main className="about-me-section" name='aboutMeScroll'>
             <div className="about-me">
-                <div className="about-me__title-card marker" ref={aboutMeRef} name='aboutMeScroll'>
+                <div className="about-me__title-card marker" ref={aboutMeRef}>
                     <h1 className="about-me__title about-me__title--rotate rotate-text-l">{'<'} About_Me</h1>
                     <hr />
                 </div>
