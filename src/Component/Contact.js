@@ -1,29 +1,14 @@
 import './Contact.scss';
+import MessageForm from './MessageForm';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { useContext } from 'react';
 import { AppContext } from '../App';
 
-const Contact = () => {
-    const {FontAwesomeIcon} = useContext(AppContext);
+const Contact = ({ contactRef }) => {
+    const { FontAwesomeIcon } = useContext(AppContext);
     return (
         <footer>
-            <div className="contact-section">
-                <h1 className="contact-section__title marker">.Contact-Me{'{'}</h1>
-                <form action="https://formsubmit.co/darkforceyoda@gmail.com" method="POST" className="contact-form">
-                    <div className="contact-form__user-info">
-                        <input name="name" type="text" placeholder="name" required className="contact-form__name" />
-                        <input name="email" type="email" placeholder="email" required className="contact-form__email" />
-                    </div>
-                    <textarea name="message" placeholder="...message" id="message" cols="50" rows="10"
-                        className="contact-form__user-text"></textarea>
-                    <input type="submit" value="Submit" id="submit" className="contact-form__submit-btn" />
-                    <input type="hidden" name="_next" value="http://127.0.0.1:5500/index.html" />
-                    <input type="hidden" name="_autoresponse"
-                        value="Thank you for contacting me. I will get in touch soon." />
-                </form>
-                <h1 className="contact-section__title">{'}'}</h1>
-            </div>
-
+            <MessageForm contactRef={contactRef} />
             <div className="contact-links">
                 <a href="https://github.com/Nicholas-Abell">
                     <FontAwesomeIcon icon={faGithub} className="contact-links__icon" />

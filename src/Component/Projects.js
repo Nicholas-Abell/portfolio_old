@@ -1,10 +1,10 @@
 import './Projects.scss';
 import Project from './Project';
 
-const Projects = () => {
+const Projects = ({ projectsRef }) => {
     return (
         <section className="projects-section">
-            <h1 className="projects-section__title">"Projects"<em>{'/>'}</em></h1>
+            <h1 ref={projectsRef} className="projects-section__title">"Projects"<em>{'/>'}</em></h1>
             <Project />
             {/* <h1 className="projects-section__title">"Projects"<em>{'/>'}</em></h1>
             <div className="carousel" onmouseover="carouselMouseOver()" onmouseleave="carouselMouseLeave()">

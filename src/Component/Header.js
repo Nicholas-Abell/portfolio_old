@@ -2,7 +2,7 @@ import './Header.scss';
 import { useContext } from 'react';
 import { AppContext } from '../App';
 
-const Header = ({ headerref }) => {
+const Header = ({ headerRef }) => {
     const { ref, inView, navView, setNavView } = useContext(AppContext);
     return (
         <header>
@@ -12,7 +12,7 @@ const Header = ({ headerref }) => {
                     Hello There, I'm
                 </h1>
                 <br />
-                <h1 className="title-card-home__text" ref={headerref}>
+                <h1 className="title-card-home__text" ref={headerRef}>
                     Nicholas Abell
                 </h1>
                 <div className="title-card-home__wrapper">

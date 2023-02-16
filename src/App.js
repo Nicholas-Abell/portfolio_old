@@ -1,4 +1,4 @@
-import { useState, createContext } from 'react';
+import { createContext } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './App.scss';
@@ -12,20 +12,21 @@ import Contact from './Component/Contact';
 export const AppContext = createContext(null);
 
 function App() {
-  const [activeNode, setActiveNode] = useState('Hello');
   const { ref: headerRef, inView: headerInView } = useInView();
   const { ref: aboutMeRef, inView: aboutMeInView } = useInView();
-
+  const { ref: skillsRef, inView: skillsInView } = useInView();
+  const { ref: projectsRef, inView: projectsInView } = useInView();
+  const { ref: contactRef, inView: contactInView } = useInView();
 
   return (
     <div>
-      <AppContext.Provider value={{ activeNode, setActiveNode, FontAwesomeIcon, }}>
-        <Navbar headerInView={headerInView} aboutMeInView={aboutMeInView} />
-        <Header headerref={headerRef} />
+      <AppContext.Provider value={{ FontAwesomeIcon }}>
+        <Navbar headerInView={headerInView} aboutMeInView={aboutMeInView} skillsInView={skillsInView} projectsInView={projectsInView} contactInView={contactInView} />
+        <Header headerRef={headerRef} />
         <AboutMe aboutMeRef={aboutMeRef} />
-        <Skills />
-        <Projects />
-        <Contact />
+        <Skills skillsRef={skillsRef} />
+        <Projects projectsRef={projectsRef} />
+        <Contact contactRef={contactRef} />
       </AppContext.Provider>
     </div>
   );

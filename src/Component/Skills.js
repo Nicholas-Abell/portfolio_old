@@ -2,7 +2,7 @@ import './Skills.scss';
 import Skill from './Skill';
 import { faHtml5, faCss3, faReact, faSass, } from '@fortawesome/free-brands-svg-icons';
 
-const Skills = () => {
+const Skills = ({ skillsRef }) => {
     return (
         <section className="skill-section">
             <div className="skills">
@@ -19,7 +19,7 @@ const Skills = () => {
                     learning React.
                 </p>
                 <div className="skill-info__title-card marker">
-                    <h1 className="skill-info__title skill-info__title--rotate rotate-text-r">Skills <em>=</em></h1>
+                    <h1 ref={skillsRef} className="skill-info__title skill-info__title--rotate rotate-text-r">Skills <em>=</em></h1>
                 </div>
             </div>
         </section >
