@@ -3,13 +3,12 @@ import Resume from './Resume';
 
 const AboutMe = ({ aboutMeRef }) => {
     return (
-        <main className="aboutMe" name='aboutMeScroll'>
-            <div className="aboutMe__titleCard">
-                <div className="aboutMe__titleCard" ref={aboutMeRef}>
-                    <h1 className="aboutMe__title aboutMe__title--rotate rotate-text-l">{'<'} About_Me</h1>
+        <main className="aboutMeSection" name='aboutMeScroll'>
+            <div className="aboutMeSection__titleCard">
+                <div className="aboutMeSection__titleCard" ref={aboutMeRef}>
+                    <h1 className="aboutMeSection__title aboutMeSection__title--rotate rotate-text-l">{'<'} About_Me</h1>
                 </div>
             </div>
-
                 <Resume />
         </main>
     )

@@ -1,5 +1,5 @@
 import './Skills.scss';
-import { faHtml5, faCss3, faReact, faSass, faJs, faBootstrap } from '@fortawesome/free-brands-svg-icons';
+import { faHtml5, faCss3, faReact, faSass, faJs, faBootstrap, } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
@@ -8,7 +8,7 @@ const Skills = ({ skillsRef }) => {
         <section className="skill-section" name='skillsScroll'>
             <div className="skills">
                 <div className='skills__wrapper'>
-                    <h1 className='skills__title'>Front-End</h1>
+                    <h1 className='skills__title skills__title--primary'>Front-End</h1>
                     <div className='skills__bucket'>
                         <FontAwesomeIcon icon={faHtml5} className="icon" />
                         <FontAwesomeIcon icon={faCss3} className="icon" />
@@ -26,6 +26,15 @@ const Skills = ({ skillsRef }) => {
                     <h1 className='skills__title'>Libraries</h1>
                     <div className='skills__bucket'>
                         <FontAwesomeIcon icon={faReact} className="icon" />
+                    </div>
+                </div>
+            </div >
+
+            <div className="skills">
+                <div className='skills__wrapper'>
+                    <h1 className='skills__title skills__title--primary'>Back-End</h1>
+                    <div className='skills__bucket'>
+                        <p>Goals for the future</p>
                     </div>
                 </div>
             </div >

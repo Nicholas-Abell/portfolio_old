@@ -1,7 +1,7 @@
 @use '../App.scss';
 @import '../App.scss';
 
-.aboutMe {
+.aboutMeSection {
     display: flex;
     padding: 2rem 1rem 1rem 1rem;
     position: relative;
@@ -35,7 +35,7 @@
         }
     }
 
-    .resume {
+    .aboutMe {
         width: 90%;
         border-radius: 1rem;
         padding: 3rem;
