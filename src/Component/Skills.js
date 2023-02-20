@@ -1,27 +1,47 @@
 import './Skills.scss';
-import Skill from './Skill';
-import { faHtml5, faCss3, faReact, faSass, } from '@fortawesome/free-brands-svg-icons';
+import { faHtml5, faCss3, faReact, faSass, faJs, faBootstrap } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 const Skills = ({ skillsRef }) => {
     return (
         <section className="skill-section" name='skillsScroll'>
             <div className="skills">
-                <Skill icon={faReact} skillName='React' slideInFromLeft={true} />
-                <Skill icon={faSass} skillName='SCSS' slideInFromLeft={false} />
-                <Skill icon={faCss3} skillName='CSS3' slideInFromLeft={true} />
-                <Skill icon={faHtml5} skillName='HTML5' slideInFromLeft={false} />
+                <div className='skills__wrapper'>
+                    <h1 className='skills__title'>Basics</h1>
+                    <div className='skills__bucket'>
+                        <FontAwesomeIcon icon={faHtml5} className="icon" />
+                        <FontAwesomeIcon icon={faCss3} className="icon" />
+                        <FontAwesomeIcon icon={faJs} className="icon" />
+                    </div>
+                </div>
+                <div className='skills__wrapper'>
+                    <h1 className='skills__title'>Frameworks / Pre-processors</h1>
+                    <div className='skills__bucket'>
+                        <FontAwesomeIcon icon={faSass} className="icon" />
+                        <FontAwesomeIcon icon={faBootstrap} className="icon" />
+                    </div>
+                </div>
+                <div className='skills__wrapper'>
+                    <h1 className='skills__title'>Libraries</h1>
+                    <div className='skills__bucket'>
+                        <FontAwesomeIcon icon={faReact} className="icon" />
+                    </div>
+                </div>
             </div >
 
-            <div className="skill-info x">
-                <p className="skill-info__text">
-                    I am proficient with vanilla HTML, CSS, Javascript and several
-                    frameworks. I am currently
-                    learning React.
-                </p>
-                <div className="skill-info__title-card marker">
-                    <h1 ref={skillsRef} className="skill-info__title skill-info__title--rotate rotate-text-r">Skills <em>=</em></h1>
+            <div className="skillInfo">
+                <div className="skillInfo__title-card marker">
+                    <h1 ref={skillsRef} className="skillInfo__title skillInfo__title--rotate rotate-text-r">Skills <em>=</em></h1>
                 </div>
             </div>
+
+            {/* <div className="aboutMe__titleCard">
+                <div className="aboutMe__titleCard" ref={aboutMeRef}>
+                    <h1 className="aboutMe__title aboutMe__title--rotate rotate-text-l">{'<'} About_Me</h1>
+                </div>
+            </div> */}
+
         </section >
     )
 }

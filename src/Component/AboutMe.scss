@@ -1,70 +1,42 @@
 @use '../App.scss';
 @import '../App.scss';
 
-.about-me-section {
+.aboutMe {
     display: flex;
     padding: 2rem 1rem 1rem 1rem;
     position: relative;
     width: 100%;
 
-    .about-me {
+    &__titleCard {
         display: flex;
         justify-content: center;
         align-items: center;
         background-color: var(--primary);
         border-radius: 1rem;
-        width: 50%;
+        width: 15%;
         min-height: 600px;
         margin-right: 0.5rem;
         transition: transform ease-out 1s, box-shadow 1s ease-in-out;
 
-        &:hover {
-            transform: scale(102%);
-            box-shadow: 3px 6px gray;
-            z-index: 10;
-
-            @include breakpoint(large) {
-                transform: none;
-                box-shadow: none;
-            }
-        }
-
         @include breakpoint(small) {
             margin: 0;
         }
+    }
 
+    &__title {
+        font-size: 7rem;
+        position: relative;
 
-        &__title-card {
-            width: 30%;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        &__title {
-            font-size: 7rem;
-            position: relative;
-
-            &--rotate {
-                transform: rotate(-90deg);
-                white-space: nowrap;
-                font-family: reglisse;
-                color: rgb(203, 59, 100);
-            }
-        }
-
-        &__info {
-            border-left: 1px solid;
-            font-size: 3rem;
-            padding: 1.8rem;
-            word-spacing: .3rem;
-            line-height: 6rem;
+        &--rotate {
+            transform: rotate(-90deg);
+            white-space: nowrap;
+            font-family: reglisse;
+            color: rgb(203, 59, 100);
         }
     }
 
     .resume {
-        width: 50%;
+        width: 90%;
         border-radius: 1rem;
         padding: 3rem;
         background-color: var(--primary);
