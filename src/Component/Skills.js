@@ -8,7 +8,7 @@ const Skills = ({ skillsRef }) => {
         <section className="skill-section" name='skillsScroll'>
             <div className="skills">
                 <div className='skills__wrapper'>
-                    <h1 className='skills__title'>Basics</h1>
+                    <h1 className='skills__title'>Front-End</h1>
                     <div className='skills__bucket'>
                         <FontAwesomeIcon icon={faHtml5} className="icon" />
                         <FontAwesomeIcon icon={faCss3} className="icon" />

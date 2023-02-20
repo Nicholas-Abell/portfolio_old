@@ -9,9 +9,8 @@ const AboutMe = ({ aboutMeRef }) => {
                     <h1 className="aboutMe__title aboutMe__title--rotate rotate-text-l">{'<'} About_Me</h1>
                 </div>
             </div>
-            <Resume />
-            <div name='target'></div>
 
+                <Resume />
         </main>
     )
 }

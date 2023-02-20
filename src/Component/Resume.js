@@ -1,11 +1,17 @@
 const Resume = ({ aboutMeRef }) => {
     return (
         <div className="resume">
+            <div className="personalInfo">
+                <h2 className="personalInfo__title">Get To Know Me</h2>
+                <hr />
+                <p className="personalInfo__info">I am a Font End Developer actively searching to begin my coding career and to make a difference in your workplace.</p>
+                <p className="personalInfo__info">I began learning C# to make video games. Switching to front end frameworks I'm excited to turn my passion into a career.</p>
+            </div>
             <div className="resume__info">
                 <h1 className="resume__title" ref={aboutMeRef}>Work Experience</h1>
                 <hr />
                 <div className="job">
-                    <div className="job__head">
+                    <div className="job__wrapper">
                         <h1 className="job__position">Shipping / Recieving Clerk</h1>
                         <h1 className="job__date">2011-PRESENT</h1>
                     </div>
@@ -18,7 +24,7 @@ const Resume = ({ aboutMeRef }) => {
                     </ul>
                 </div>
                 <div className="job">
-                    <div className="job__head">
+                    <div className="job__wrapper">
                         <h1 className="job__position">Web Developer</h1>
                         <h1 className="job__date">2021-PRESENT</h1>
                     </div>
