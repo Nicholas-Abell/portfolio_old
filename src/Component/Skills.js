@@ -1,7 +1,6 @@
-import './Skills.scss';
+import '../styles/Skills.scss';
 import { faHtml5, faCss3, faReact, faSass, faJs, faBootstrap, } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 
 const Skills = ({ skillsRef }) => {
     return (
@@ -44,12 +43,6 @@ const Skills = ({ skillsRef }) => {
                     <h1 ref={skillsRef} className="skillInfo__title skillInfo__title--rotate rotate-text-r">Skills <em>=</em></h1>
                 </div>
             </div>
-
-            {/* <div className="aboutMe__titleCard">
-                <div className="aboutMe__titleCard" ref={aboutMeRef}>
-                    <h1 className="aboutMe__title aboutMe__title--rotate rotate-text-l">{'<'} About_Me</h1>
-                </div>
-            </div> */}
 
         </section >
     )

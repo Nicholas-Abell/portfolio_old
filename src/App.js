@@ -16,6 +16,7 @@ function App() {
   const { ref: skillsRef, inView: skillsInView } = useInView();
   const { ref: projectsRef, inView: projectsInView } = useInView();
   const { ref: contactRef, inView: contactInView } = useInView();
+  
 
   return (
     <div>

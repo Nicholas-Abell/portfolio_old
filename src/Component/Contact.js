@@ -1,4 +1,4 @@
-import './Contact.scss';
+import '../styles/Contact.scss';
 import MessageForm from './MessageForm';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { useContext } from 'react';
@@ -7,7 +7,7 @@ import { AppContext } from '../App';
 const Contact = ({ contactRef }) => {
     const { FontAwesomeIcon } = useContext(AppContext);
     return (
-        <footer>
+        <footer name='contactScroll'>
             <MessageForm contactRef={contactRef} />
             <div className="contact-links">
                 <a href="https://github.com/Nicholas-Abell">

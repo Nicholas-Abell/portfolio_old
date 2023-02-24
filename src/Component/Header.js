@@ -1,4 +1,4 @@
-import './Header.scss';
+import '../styles/Header.scss';
 import { useContext } from 'react';
 import { AppContext } from '../App';
 

@@ -1,9 +1,8 @@
-import './Navbar.scss';
+import '../styles/Navbar.scss';
 import NavbarNode from './NavbarNode';
 import { faCodepen } from '@fortawesome/free-brands-svg-icons';
 import { faHouse, faUser, faCode, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import * as Scroll from 'react-scroll';
-import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import { animateScroll as scroll, scroller } from 'react-scroll'
 
 
 const Navbar = ({ headerInView, aboutMeInView, projectsInView, contactInView, skillsInView }) => {
@@ -12,10 +11,6 @@ const Navbar = ({ headerInView, aboutMeInView, projectsInView, contactInView, sk
         scroller.scrollTo(target, {
             duration: 800,
             smooth: true,
-            // behavior: 'smooth',
-            // block: 'center',
-            // inline: 'center'
-            // offset: 50, // Scrolls to element + 50 pixels down the page
         })
     }
 
@@ -52,7 +47,7 @@ const Navbar = ({ headerInView, aboutMeInView, projectsInView, contactInView, sk
             <NavbarNode
                 icon={faEnvelope}
                 className={!contactInView ? 'navbar__icon' : 'navbar__icon--active'}
-                onClick={scrollToBottom} />
+                onClick={() => scrollToElement('contactScroll')} />
         </nav>
     );
 }

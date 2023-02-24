@@ -1,4 +1,4 @@
-import './Projects.scss';
+import '../styles/Projects.scss';
 import Project from './Project';
 
 import wordle_clone_img from '../assets/Images/wordle_clone.jpeg';
@@ -39,8 +39,8 @@ const Projects = ({ projectsRef }) => {
     ];
 
     return (
-        <section className="projects-section" name='projectsScroll'>
-            <h1 ref={projectsRef} className="projects-section__title">"Projects"<em>{'/>'}</em></h1>
+        <section ref={projectsRef} className="projects-section" name='projectsScroll'>
+            <h1 className="projects-section__title">"Projects"<em>{'/>'}</em></h1>
             {
                 projectList.map((project) => {
                     return (
