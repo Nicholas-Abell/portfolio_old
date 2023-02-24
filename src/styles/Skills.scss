@@ -9,6 +9,7 @@
 
     .skills {
         background-color: var(--primary);
+        border: solid 5px rgb(159, 159, 106);
         width: 100%;
         color: white;
         border-radius: 1rem;
@@ -30,7 +31,7 @@
             margin-bottom: 10px;
             padding: 1rem;
 
-            &--primary{
+            &--primary {
                 color: red
             }
         }
@@ -50,13 +51,13 @@
             color: var(--dark);
             padding: 10px;
         }
-
     }
 }
 
 .skillInfo {
     text-align: left;
     background-color: var(--primary);
+    border: solid 5px rgb(159, 159, 106);
     color: white;
     display: flex;
     justify-content: center;
@@ -66,17 +67,6 @@
     margin-left: 0.5rem;
     transition: transform ease-out 1s, box-shadow 1s ease-in-out;
     z-index: 1;
-
-    &:hover {
-        transform: scale(102%);
-        box-shadow: 3px 6px gray;
-        z-index: 10;
-
-        @include breakpoint(large) {
-            transform: none;
-            box-shadow: none;
-        }
-    }
 
     &__text {
         border-right: solid 1px;
