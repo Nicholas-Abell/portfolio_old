@@ -20,7 +20,10 @@ function App() {
   return (
     <div>
       <AppContext.Provider value={{ FontAwesomeIcon }}>
-        <Navbar headerInView={headerInView} aboutMeInView={aboutMeInView} skillsInView={skillsInView} projectsInView={projectsInView} contactInView={contactInView} />
+        <Navbar
+          headerInView={headerInView} aboutMeInView={aboutMeInView}
+          skillsInView={skillsInView} projectsInView={projectsInView}
+          contactInView={contactInView} />
         <Header headerRef={headerRef} />
         <AboutMe aboutMeRef={aboutMeRef} />
         <Skills skillsRef={skillsRef} />

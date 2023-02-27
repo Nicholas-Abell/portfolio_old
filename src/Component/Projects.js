@@ -3,7 +3,7 @@ import Project from './Project';
 
 import wordle_clone_img from '../assets/Images/wordle_clone.jpeg';
 import resteraunt_landing_page_img from '../assets/Images/Restaurant_Landing_Page.png';
-import testImg from '../assets/Images/florian-olivo-4hbJ-eymZ1o-unsplash.jpg';
+import movie_database_im from '../assets/Images/movie_database.png';
 
 const Projects = ({ projectsRef }) => {
 
@@ -11,6 +11,15 @@ const Projects = ({ projectsRef }) => {
     const projectList = [
         {
             id: 1,
+            title: 'Movie Database',
+            description: 'Find new and upcoming movies. Made with React, styled with Tailwind, and hosted on Firebase.',
+            image: movie_database_im,
+            switchSide: false,
+            gitHubLink: 'https://github.com/Nicholas-Abell/movie_database',
+            livePageLink: 'https://movie-database-4bf43.web.app/',
+        },
+        {
+            id: 2,
             title: 'Wordle Game',
             description: 'A Wordle game made in React',
             image: wordle_clone_img,
@@ -19,7 +28,7 @@ const Projects = ({ projectsRef }) => {
             livePageLink: 'https://nicholas-abell.github.io/wordle_clone/',
         },
         {
-            id: 2,
+            id: 3,
             title: 'Restaurant Landing Page',
             description: 'A stitic website made with vanilla HTML, and SCSS',
             image: resteraunt_landing_page_img,
@@ -27,15 +36,6 @@ const Projects = ({ projectsRef }) => {
             gitHubLink: 'https://github.com/Nicholas-Abell/Restaurant_Landing_Page',
             livePageLink: 'https://nicholas-abell.github.io/Restaurant_Landing_Page/',
         },
-        {
-            id: 3,
-            title: 'Test',
-            description: 'Test, Make Someting Worthy of employement',
-            image: testImg,
-            switchSide: false,
-            gitHubLink: '/',
-            livePageLink: '/',
-        }
     ];
 
     return (
