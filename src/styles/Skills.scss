@@ -54,6 +54,21 @@
     }
 }
 
+.card{
+    border: solid 5px gray;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__title{
+        font: bold;
+        font-weight: 900;
+    }
+}
+
 .skillInfo {
     text-align: left;
     background-color: var(--primary);

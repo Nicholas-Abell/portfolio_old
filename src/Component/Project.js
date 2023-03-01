@@ -15,7 +15,7 @@ const Project = ({ title, description, image, switchSide, gitHubLink, livePageLi
             <h1 className='project__title'>{title}</h1>
             <div className='flex'
                 style={switchSide ? { flexDirection: 'row-reverse' } : { flexDirection: 'row' }}>
-                <div className="project__techStack">
+                <div className="project__links">
                     <h2>Live</h2>
                     <a href={livePageLink}>
                         <FontAwesomeIcon icon={faPager} className="icon" />

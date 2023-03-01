@@ -35,7 +35,10 @@ const Skills = ({ skillsRef }) => {
                 <div className='skills__wrapper'>
                     <h1 className='skills__title skills__title--primary'>Back-End</h1>
                     <div className='skills__bucket'>
-                        <SiFirebase className='icon' style={{ width: '105px', height: '105px' }} />
+                        <div className='card'>
+                            <SiFirebase className='icon card__icon' style={{ width: '105px', height: '105px' }} />
+                            <p className='card__title'>FireBase</p>
+                        </div>
                     </div>
                 </div>
             </div >
