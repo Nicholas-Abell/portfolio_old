@@ -1,6 +1,7 @@
 import '../styles/Skills.scss';
-import { faHtml5, faCss3, faReact, faSass, faJs, faBootstrap, } from '@fortawesome/free-brands-svg-icons';
+import { faHtml5, faCss3, faReact, faSass, faJs, faBootstrap } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { SiTailwindcss, SiFirebase } from 'react-icons/si'
 
 const Skills = ({ skillsRef }) => {
     return (
@@ -18,6 +19,7 @@ const Skills = ({ skillsRef }) => {
                     <h1 className='skills__title'>Frameworks / Pre-processors</h1>
                     <div className='skills__bucket'>
                         <FontAwesomeIcon icon={faSass} className="icon" />
+                        <SiTailwindcss className='icon' style={{ width: '105px', height: '105px' }} />
                         <FontAwesomeIcon icon={faBootstrap} className="icon" />
                     </div>
                 </div>
@@ -33,7 +35,7 @@ const Skills = ({ skillsRef }) => {
                 <div className='skills__wrapper'>
                     <h1 className='skills__title skills__title--primary'>Back-End</h1>
                     <div className='skills__bucket'>
-                        <p>Goals for the future</p>
+                        <SiFirebase className='icon' style={{ width: '105px', height: '105px' }} />
                     </div>
                 </div>
             </div >
