@@ -1,5 +1,5 @@
 import '../styles/AboutMe.scss';
-import Resume from './Resume';
+import Resume from '../component/Resume';
 
 const AboutMe = ({ aboutMeRef }) => {
     return (

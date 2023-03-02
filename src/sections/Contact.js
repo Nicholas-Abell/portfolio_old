@@ -1,5 +1,5 @@
 import '../styles/Contact.scss';
-import MessageForm from './MessageForm';
+import MessageForm from '../component/MessageForm';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { useContext } from 'react';
 import { AppContext } from '../App';

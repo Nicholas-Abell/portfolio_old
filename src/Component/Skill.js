@@ -10,4 +10,4 @@ const Skill = ({ icon, title }) => {
     )
 }
 
-export default Skill
+export default Skill;

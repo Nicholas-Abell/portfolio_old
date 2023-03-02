@@ -1,5 +1,5 @@
 import '../styles/Projects.scss';
-import Project from './Project';
+import Project from '../component/Project';
 
 import wordle_clone_img from '../assets/Images/wordle_clone.jpeg';
 import resteraunt_landing_page_img from '../assets/Images/Restaurant_Landing_Page.png';

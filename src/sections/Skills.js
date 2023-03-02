@@ -1,5 +1,5 @@
 import '../styles/Skills.scss';
-import Skill from './Skill';
+import Skill from '../component/Skill';
 import { faHtml5, faCss3, faReact, faSass, faJs, faBootstrap } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { SiTailwindcss, SiFirebase } from 'react-icons/si'

@@ -2,12 +2,12 @@ import { createContext } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './App.scss';
-import Navbar from './Component/Navbar';
-import Header from './Component/Header';
-import AboutMe from './Component/AboutMe';
-import Skills from './Component/Skills';
-import Projects from './Component/Projects';
-import Contact from './Component/Contact';
+import Navbar from './component/Navbar';
+import Header from './sections/Header';
+import AboutMe from './sections/AboutMe';
+import Skills from './sections/Skills';
+import Projects from './sections/Projects';
+import Contact from './sections/Contact';
 export const AppContext = createContext(null);
 
 function App() {
