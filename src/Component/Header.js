@@ -18,7 +18,7 @@ const Header = ({ headerRef }) => {
                 <div className="title-card-home__wrapper">
                     <ul className="dynamic-text-list">
                         <li className="dynamic-text-list__item">Web Developer</li>
-                        <li className="dynamic-text-list__item">Hire-able Guy</li>
+                        <li className="dynamic-text-list__item">React Js Developer</li>
                         <li className="dynamic-text-list__item">Your Future Employee</li>
                     </ul>
                 </div>

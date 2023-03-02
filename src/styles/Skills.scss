@@ -21,18 +21,24 @@
         text-align: center;
         padding: 1rem;
 
+        &--backend{
+            width: 40%;
+        }
+
         &__wrapper {
             width: 100%;
         }
 
         &__title {
             font-size: 1.5rem;
-            border-bottom: solid gray;
-            margin-bottom: 10px;
+            border-bottom: solid rgb(85, 82, 82);
+            border-top: solid rgb(85, 82, 82);
+            margin: 10px 0;
             padding: 1rem;
+            color: rgb(203, 59, 100);
 
             &--primary {
-                color: red
+                color: rgb(206, 206, 125);
             }
         }
 
@@ -43,8 +49,8 @@
         }
 
         .icon {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             border: solid black;
             border-radius: 1rem;
             background-color: rgba(79, 87, 87, 0.8);
@@ -54,16 +60,17 @@
     }
 }
 
-.card{
+.card {
     border: solid 5px gray;
     border-radius: 1rem;
     padding: 0.5rem;
-    height: 180px;
+    height: 150px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
 
-    &__title{
+    &__title {
         font: bold;
         font-weight: 900;
     }
