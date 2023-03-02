@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.8f6a008f.css",
-    "main.js": "/portfolio/static/js/main.4b213ed6.js",
+    "main.css": "/portfolio/static/css/main.49542331.css",
+    "main.js": "/portfolio/static/js/main.5848d93a.js",
     "static/media/movie_database.png": "/portfolio/static/media/movie_database.cce03c0c5fd0e0e1e733.png",
     "static/media/Restaurant_Landing_Page.png": "/portfolio/static/media/Restaurant_Landing_Page.f796be5044f4b4731c4f.png",
     "static/media/ReglisseBack-eZewm.otf": "/portfolio/static/media/ReglisseBack-eZewm.2d4e2702f4447b055930.otf",
     "static/media/wordle_clone.jpeg": "/portfolio/static/media/wordle_clone.60bec5ece8afc98fbdc2.jpeg",
     "index.html": "/portfolio/index.html",
-    "main.8f6a008f.css.map": "/portfolio/static/css/main.8f6a008f.css.map",
-    "main.4b213ed6.js.map": "/portfolio/static/js/main.4b213ed6.js.map"
+    "main.49542331.css.map": "/portfolio/static/css/main.49542331.css.map",
+    "main.5848d93a.js.map": "/portfolio/static/js/main.5848d93a.js.map"
   },
   "entrypoints": [
-    "static/css/main.8f6a008f.css",
-    "static/js/main.4b213ed6.js"
+    "static/css/main.49542331.css",
+    "static/js/main.5848d93a.js"
   ]
 }
