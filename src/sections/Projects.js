@@ -12,7 +12,7 @@ const Projects = ({ projectsRef }) => {
         {
             id: 1,
             title: 'Movie Database',
-            description: 'Find new and upcoming movies. Made with React, styled with Tailwind, and hosted on Firebase.',
+            description: 'Need to know what movie is streaming and where? Now you can. Made with React, styled with Tailwind, and hosted on Firebase.',
             image: movie_database_im,
             switchSide: false,
             gitHubLink: 'https://github.com/Nicholas-Abell/movie_database',

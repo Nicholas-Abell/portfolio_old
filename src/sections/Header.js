@@ -3,7 +3,6 @@ import { useContext } from 'react';
 import { AppContext } from '../App';
 
 const Header = ({ headerRef }) => {
-    const { ref, inView, navView, setNavView } = useContext(AppContext);
     return (
         <header>
             <div className="background --active"></div>

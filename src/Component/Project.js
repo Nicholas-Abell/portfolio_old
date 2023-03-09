@@ -8,8 +8,6 @@ const Project = ({ title, description, image, switchSide, gitHubLink, livePageLi
 
     const { FontAwesomeIcon } = useContext(AppContext);
 
-    //<FontAwesomeIcon icon="fa-solid fa-pager" />
-
     return (
         <div className="project">
             <h1 className='project__title'>{title}</h1>

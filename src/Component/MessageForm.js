@@ -10,7 +10,7 @@ const MessageForm = ({ contactRef }) => {
                 <textarea name="message" placeholder="...message" id="message" cols="50" rows="10"
                     className="contact-form__user-text"></textarea>
                 <input type="submit" value="Submit" id="submit" className="contact-form__submit-btn" />
-                <input type="hidden" name="_next" value="http://127.0.0.1:5500/index.html" />
+                <input type="hidden" name="_next" value="https://nicholas-abell.github.io/portfolio/" />
                 <input type="hidden" name="_autoresponse"
                     value="Thank you for contacting me. I will get in touch soon." />
             </form>
