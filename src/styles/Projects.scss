@@ -32,6 +32,7 @@
 
         &__title {
             width: 50%;
+            max-width: 1000px;
             border: solid white 4px;
             border-radius: 1rem;
             padding: 1rem;
@@ -72,10 +73,10 @@
         }
 
         &__img {
-
             position: relative;
             border: solid white 5px;
             width: 50%;
+            max-width: 1000px;
             height: 400px;
             border-radius: 1rem;
 
