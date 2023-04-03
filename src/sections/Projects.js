@@ -2,7 +2,7 @@ import '../styles/Projects.scss';
 import Project from '../component/Project';
 
 import wordle_clone_img from '../assets/Images/wordle_clone.jpeg';
-import resteraunt_landing_page_img from '../assets/Images/Restaurant_Landing_Page.png';
+import sms_construction from '../assets/Images/sms_construction.png';
 import movie_database_im from '../assets/Images/movie_database.png';
 
 const Projects = ({ projectsRef }) => {
@@ -20,21 +20,21 @@ const Projects = ({ projectsRef }) => {
         },
         {
             id: 2,
-            title: 'Wordle Game',
-            description: 'A Wordle game made in React',
-            image: wordle_clone_img,
+            title: 'SMS Construction & Remodeling',
+            description: "A Landing page I made for a client. Currently Hosted on Hostinger. I learned a lot about SEO and google analytics while making sure my client's bussiness could be found using the most popular search engines.",
+            image: sms_construction,
             switchSide: true,
-            gitHubLink: 'https://github.com/Nicholas-Abell/wordle_clone',
-            livePageLink: 'https://nicholas-abell.github.io/wordle_clone/',
+            gitHubLink: 'https://github.com/Nicholas-Abell/handy_man',
+            livePageLink: 'https://smsconstructionandremodeling.com/',
         },
         {
             id: 3,
-            title: 'Restaurant Landing Page',
-            description: 'A stitic website made with vanilla HTML, and SCSS',
-            image: resteraunt_landing_page_img,
+            title: 'Wordle Game',
+            description: 'A Wordle game made in React',
+            image: wordle_clone_img,
             switchSide: false,
-            gitHubLink: 'https://github.com/Nicholas-Abell/Restaurant_Landing_Page',
-            livePageLink: 'https://nicholas-abell.github.io/Restaurant_Landing_Page/',
+            gitHubLink: 'https://github.com/Nicholas-Abell/wordle_clone',
+            livePageLink: 'https://nicholas-abell.github.io/wordle_clone/',
         },
     ];
 
